@@ -9,5 +9,5 @@ Currying
 
 **Uncurrying is the dual transformation to currying, and can be seen as a form of defunctionalization. 
 It takes a function f(x) which returns another function g(y) as a result,
-** and yields a new function f′(x,y) which takes a number of additional parameters and applies them to the function returned by function f.**
-** The process can be iterated if necessary.**
+and yields a new function f′(x,y) which takes a number of additional parameters and applies them to the function returned by function f.**
+The process can be iterated if necessary.**
