@@ -23,7 +23,9 @@ grunt
 有了nodeJs环境后，我们便可以开始搞grunt了，因为我们可能在任何目录下运行打包程序，所以我们需要安装CLI
 官方推荐在全局安装CLI（grunt的命令行接口）
 
+```javascript
 npm install -g grunt-cli
+```
 这条命令将会把grunt命令植入系统路径，这样就能在任意目录运行他，原因是
 
 每次运行grunt时，它都会使用node的require查找本地是否安装grunt，如果找到CLI便加载这个本地grunt库
