@@ -65,7 +65,7 @@ http://www.cliponyu.com/mobile/index
 
 ```javascript
 /*方法二*/
-/*
+
 var FUNC=[
 	function() {$('#block1').animate({left:'+=100'},aniCB);},
 	function() {$('#block2').animate({left:'+=100'},aniCB);},
@@ -106,7 +106,7 @@ aniCB();
 ```javascript
 
 /*第三种方法*/
-/*
+
 $(document).ready(function() {
 	$('#block1')
 	.animate({left: '+=100'})
@@ -122,7 +122,7 @@ $(document).ready(function() {
 	.animate({left: '+=100'})
 	.delay(1000)
 	.animate({left: '+=100'});
-});*/
+});
 
 ```
 
