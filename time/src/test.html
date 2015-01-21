@@ -1,0 +1,164 @@
+<meta charset="utf-8">
+<html>
+<style>
+div {
+	background:#aaa;
+	width:18px;
+	height:18px;
+	position:absolute;
+	top:10px;
+}
+
+</style>
+<body>
+	<div id='block1'></div>
+	<div id='block2'></div>
+</body>
+<script src='jquery-1.9.1.js'></script>
+<script>
+/*方法一
+$('#block1').animate({left:'+=100'},function() {
+	$('#block2').animate({left:'+=100'},function() {
+		$('#block1').animate({left:'+=100'},function() {
+			$('#block2').animate({left:'+=100'},function() {
+				$('#block1').animate({left:'+=100'},function(){
+				alert('动画结束');
+				});
+			});
+		});
+	});
+});
+*/
+
+/*方法二*/
+/*
+var FUNC=[
+	function() {$('#block1').animate({left:'+=100'},aniCB);},
+	function() {$('#block2').animate({left:'+=100'},aniCB);},
+	function() {$('#block1').animate({left:'+=100'},aniCB);},
+	function() {$('#block2').animate({left:'+=100'},aniCB);},
+	function() {$('#block1').animate({left:'+=100'},aniCB);},
+	function(){alert('动画结束')}
+];
+
+var aniCB=function() {
+	$(document).dequeue('myAnimation');
+}
+
+$(document).queue('myAnimation',FUNC);
+aniCB();
+
+/**/
+
+/*第三种方法*/
+/*
+$(document).ready(function() {
+	$('#block1')
+	.animate({left: '+=100'})
+	.delay(1000)
+	.animate({left: '+=100'})
+	.delay(1000)
+	.animate({left: '+=100'});
+
+	$('#block2')
+	.delay(1000)
+	.animate({left: '+=100'})
+	.delay(1000)
+	.animate({left: '+=100'})
+	.delay(1000)
+	.animate({left: '+=100'});
+});*/
+
+
+/*方法四*/
+
+/*思路一，处理时间、事件顺序，由于事件绑定为初始状态。所以会出现动画还没有执行结束就开始事件阻塞动画。
+ *event_list:事件仓库初始化时设定，running时不变
+ *run_event_list:事件栈初始化时设定，running时改变先进先出
+ * 看了一下jquery的delay，它实现的是单一元素队列，实际上animation的callback就是使用delay来实现
+ * 但是delay后面跟的必须是jquery对象，不能是另一个dom的动画方法。
+ * */
+
+function Time() {
+    this.event_list = [];
+    this.run_event_list = [];
+    var that = this;
+    this.init = function (fn, parameter, time) {
+        var delayTime = time ? time : 0;
+        return {fn: fn, parameter: parameter, time: delayTime};
+
+    };
+    this.sandbox = function () {
+        var current_event = that.run_event_list.shift();
+        /*延迟执行*/
+        setTimeout(function () {
+            current_event.fn.apply(window, [current_event.parameter]);
+        }, current_event.time);
+    };
+    this.start = function (outTime) {
+        for (var i = 0; i < that.event_list.length; i++) {
+            that.run_event_list.push(that.event_list[i]);
+        }
+        var t = window.setInterval(function () {
+            if (that.run_event_list[0]) {
+                that.sandbox();
+            } else {
+                clearInterval(t);
+            }
+        }, outTime);
+        // 时间压出栈为1500毫秒，我在寻找不设定时间的方法。(下一步可能参考deferred来进行修改)
+
+    };
+    this.add = function (obj) {
+        that.event_list.push(obj);
+    }
+};
+
+
+function block1(){
+	$('#block1').animate({left: '+=100'})
+};
+function block2(){
+	$('#block1').animate({left: '+=100'})
+}
+function block3(){
+	$('#block1').animate({left: '+=100'})
+}
+	
+function block4(){
+	$('#block2').animate({left: '+=100'})
+};
+function block5(){
+	$('#block2').animate({left: '+=100'})
+}
+function block6(){
+	$('#block2').animate({left: '+=100'})
+}
+
+
+
+var time = new Time();
+//time.add(time.init(block1, ''),500);可以为动画单独指定延迟时间
+
+time.add(time.init(block1, ''));
+time.add(time.init(block4, ''));
+time.add(time.init(block2, ''));
+time.add(time.init(block5, ''));
+time.add(time.init(block3, ''));
+time.add(time.init(block6, ''));
+
+time.start(500);// 可以为动画队列设定总体延迟时间
+
+/*思路二，为function原型上添加，状态变量以及后续启动方法then，动画返回值为状态变量。
+ 类似于defered 的promise
+ Function.prototype['abc']= '1';
+ var defered = {
+ }
+ */
+
+
+            
+
+</script>
+
+</html>
