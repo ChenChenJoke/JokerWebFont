@@ -1,0 +1,33 @@
+/**
+ * get japanese rokuyou calendar
+ * @depend toLunar() function
+ * @param  {Date}  date
+ * @return {Object}  {
+ *	 y  year
+ *   M  month
+ *   d  day
+ *   h  hour
+ *   m  minute
+ *   s  second
+ *   w  week
+ *   z  timezone offset
+ *   jl  japan rokuyou frequency[0, 5]
+ * }    
+ */
+Date.extend && Date.toLunar && Date.extend({
+	toLyl: function(date) {
+		var lunar, lm, ld;
+
+		date = new Date(date);
+		lunar = date.toLunar();
+		d = date.format();
+
+		lm = parseInt(lunar.cm, 10);
+		ld = parseInt(lunar.cd, 10);
+
+		lm = lm > 6 ? lm - 7 : lm - 1;
+		d.jl = (lm + ld - 1) % 6;
+
+		return d;
+	}
+});

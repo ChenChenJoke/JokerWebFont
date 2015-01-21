@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hao123</title>
+
+    <style>
+*{margin: 0; padding: 0;}
+label{width: 80px; display: inline-block; padding: 10px 20px;}
+input{ width: 500px;}
+    </style>
+    <link rel="stylesheet" href="../src/sns-share.css">
+    <script src="js/console.js"></script>
+    <script src="js/mod.js"></script>
+    <script src="js/js_framework.js"></script>
+    <script src="../src/sns-share.js"></script>
+</head>
+<body>
+
+<h2>post a picture</h2>
+<form action="/" id="sharePost">
+    <p><label>app_id</label><input type="text" value="297456530374102"></p>
+    <p><label>url</label><input type="text" value="http://gitlab.pro"></p>
+    <p><label>image</label><input type="text" value="http://www.baidu.com/img/bdlogo.gif"></p>
+    <p><label>summary</label><input type="text" value="summary"></p>
+    <p><label>title</label><input type="text" value="title"></p>
+    <p><label>description</label><input type="text" value="description"></p>
+    <p><label>redirect_uri</label><input type="text" value="http://view.gitlab.pro/common-ui/sns-share/raw/master/demo/close.html"></p>
+    <p><button>submit</button></p>
+</form>
+
+<pre>
+try your self
+------------------------
+Notes:
+
+1. you can share any picture(except FBCDN image) with this api
+
+2. if you want close page after post
+
+redirect_uri -> close.html
+```
+window.close()
+```
+
+3. config `app_id` -> allow host / via info
+</pre>
+</body>
+<script>
+$("#sharePost").on("submit", function(e) {
+    var info = {};
+    $("input", this).each(function() {
+        info[$("label", $(this).parent()).text()] = $(this).val();
+    });
+    $.snsShare({
+        service: "facebook_feed",
+        info: info
+    })
+    return false;
+});
+</script>
+</html>

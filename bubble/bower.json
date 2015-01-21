@@ -1,0 +1,15 @@
+{
+  "name": "bubble",
+  "version": "1.0.0",
+  "authors": [
+    "chenguangyin <chenguangyin@baidu.com>"
+  ],
+  "description": "A bubble plugin for jQuery.",
+  "keywords": [],
+  "license": "MIT",
+  "homepage": "http://gitlab.pro/common-ui/bubble",
+  "ignore": [
+    "**/*",
+    "!src/**"
+  ]
+}

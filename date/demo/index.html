@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://view.gitlab.pro/common-ui/base-css/raw/mini/dist/base.ltr.ie.css">
+    <link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+    <h1>Time Landscape<sup>v0.0.1</sup></h1>
+    <div class="l-wrap cf">
+        <div id="filpClock" class="filp-wrap">
+            <ul class="flip">
+                <li class="fore">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">8</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">8</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="back">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">8</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">8</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="flip">
+                <li class="fore">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">8</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">8</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="back">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">8</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">8</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="flip-space">
+                <li class="space">:</li>
+            </ul>
+            <ul class="flip">
+                <li class="fore">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">8</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">8</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="back">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">8</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">8</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="flip">
+                <li class="fore">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">8</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">8</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="back">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">8</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">8</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="flip-space">
+                <li class="space">:</li>
+            </ul>
+            <ul class="flip">
+                <li class="fore">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">8</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">8</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="back">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">8</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">8</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="flip">
+                <li class="fore">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">8</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">8</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="back">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">8</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">8</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="h-date">
+                <li><span id="week"></span> <span id="ymd"></span></li>
+                <li>Unix: <span id="unix"></span></li>
+                <li>ISO: <span id="iso"></span></li>
+                <li>timezone: <span id="timezone"></span></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="l-wrap cf">
+        <div id="filpCountDown" class="countdown">
+            <ul class="flip-space">
+                <li class="space">Next year in</li>
+            </ul>
+            <ul class="flip">
+                <li class="fore">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="back">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="flip">
+                <li class="fore">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="back">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="flip">
+                <li class="fore">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="back">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="flip-space">
+                <li class="space">days, </li>
+            </ul>
+            <ul class="flip">
+                <li class="fore">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="back">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="flip">
+                <li class="fore">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="back">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="flip-space">
+                <li class="space">hours, </li>
+            </ul>
+            <ul class="flip">
+                <li class="fore">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="back">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="flip">
+                <li class="fore">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="back">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="flip-space">
+                <li class="space">minutes, </li>
+            </ul>
+            <ul class="flip">
+                <li class="fore">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="back">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="flip">
+                <li class="fore">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="back">
+                    <a href="#">
+                        <div class="up">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                        <div class="down">
+                            <div class="shadow"></div>
+                            <div class="inn">0</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="flip-space">
+                <li class="space">seconds</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="l-wrap cf">
+        <ul class="timezone">
+            <li>
+                <i id="needle" class="clock" data-timezone="7">14:14:43</i>
+                <p>Thailand</p>
+            </li>
+            <li>
+                <i class="clock" data-timezone="-5">14:14:43</i>
+                <p>New York</p>
+            </li>
+            <li>
+                <i class="clock" data-timezone="9">14:14:43</i>
+                <p>Tokyo</p>
+            </li>
+            <li>
+                <i class="clock" data-timezone="8">14:14:43</i>
+                <p>beijing</p>
+            </li>
+            <li>
+                <i class="clock" data-timezone="-6">14:14:43</i>
+                <p>Mexico</p>
+            </li>
+            <li>
+                <i class="clock" data-timezone="1">14:14:43</i>
+                <p>Rome</p>
+            </li>
+            <li>
+                <i class="clock" data-timezone="2">14:14:43</i>
+                <p>Cairo</p>
+            </li>
+            <li>
+                <i class="clock" data-timezone="0">14:14:43</i>
+                <p>London</p>
+            </li>
+            <li>
+                <i class="clock" data-timezone="-5">14:14:43</i>
+                <p>Nassau</p>
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="../dist/date.min.js"></script>
+<script src="js/demo.js"></script>
+</html>

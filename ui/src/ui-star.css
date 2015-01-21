@@ -1,0 +1,70 @@
+/*
+
+star
+ */
+
+/**
+ * 1. Make radius.
+ * 2. Fix IE6 bug.
+ * 3. Fix firefox font-size bug.
+ */
+.ui-star{
+    font: 15px Arial;
+    position: relative;
+    color: #555;
+    float: left;
+    margin: 0 3px;
+    vertical-align: middle;
+    -moz-transform:scale(1.5);
+    line-height: 1;
+
+    /* 1 */
+    /*border-radius: 30%;
+    overflow: hidden;
+    width: 12px;
+    height: 12px;
+    text-indent: -1px;
+    line-height: 11px;*/
+}
+
+/* 3 */
+@-moz-document url-prefix() {
+    .ui-star{
+        margin: 0 6px;
+    }
+}
+
+.ui-star_bg{
+    display: none;
+    position: absolute;
+    color: #FDC942;
+    left: 0;
+    top: 0;
+    _top: 1px;
+    overflow: hidden;
+    -webkit-filter: drop-shadow(0 0 1px rgba(253,200,63,.7));
+    -moz-filter: drop-shadow(0 0 1px rgba(253,200,63,.7));
+    -ms-filter: drop-shadow(0 0 1px rgba(253,200,63,.7));
+    -o-filter: drop-shadow(0 0 1px rgba(253,200,63,.7));
+    filter: drop-shadow(0 0 1px rgba(253,200,63,.7));
+
+}
+
+.ui-star-half .ui-star_bg{
+    width: 50%;
+}
+
+.ui-star:hover{
+    /* 2 */
+    zoom: 1;
+}
+
+.ui-star-cur .ui-star_bg,
+.ui-star:hover .ui-star_bg{
+    display: inline-block;
+    cursor: pointer;
+}
+
+.ui-star-l{
+    font-size: 25px;
+}

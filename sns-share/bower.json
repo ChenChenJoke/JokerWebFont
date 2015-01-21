@@ -1,0 +1,16 @@
+{
+  "name": "sns-share",
+  "version": "1.0.1",
+  "authors": [
+    "yuji <yuji@baidu.com>",
+    "wangmingfei <wangmingfei@baidu.com>"
+  ],
+  "description": "A simple sns share service wrapper.",
+  "keywords": [],
+  "license": "MIT",
+  "homepage": "http://gitlab.pro/common-ui/sns-share",
+  "ignore": [
+    "**/*",
+    "!src/**"
+  ]
+}

@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+
+<style>
+/*body{ padding: 378px;}*/
+*{ margin: 0; padding: 0;}
+
+body{ height: 2000px;}
+.wrap{ border: 1px solid #000; width: 120px; height: 200px; float: left;
+    overflow: auto;
+}
+
+.inner{ background: #eee; border: 20px solid #f90; line-height: 2; width: 200px; overflow: hidden;}
+
+
+.demo-x{ width: 700px;}
+.demo-x .inner{ width: 1700px; height: 360px;}
+</style>
+
+<link rel="stylesheet" href="../src/scrollable.css">
+<script src="js/console.js"></script>
+<script src="js/mod.js"></script>
+<script src="js/js_framework.js"></script>
+
+<script src="../src/scrollable.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <div class="inner" id="test0">
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+    </div>
+</div>
+
+
+<div class="wrap">
+    <div class="inner" id="test1">
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+    </div>
+</div>
+
+<div class="wrap">
+    <div class="inner" id="test2">
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+    </div>
+</div>
+
+<div>
+    <a href="#" id="goToFirst">goToFirst</a>
+    <a href="#" id="goToLast">goToLast</a>
+</div>
+
+<div class="wrap demo-x">
+    <div class="inner" id="testX">
+        scroll...
+        <br>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, voluptatem, dolorum soluta praesentium a deserunt quos sit cupiditate amet reiciendis rerum quae! Impedit, beatae, adipisci in similique eligendi corporis tempore.
+        <br>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, consectetur, doloribus nam accusamus atque ex voluptate modi itaque pariatur cum. Odit temporibus quaerat laudantium ipsum soluta explicabo et blanditiis similique!
+        <br>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, error nisi provident incidunt ea quis qui enim quam sapiente beatae vitae natus necessitatibus laboriosam magnam facere labore pariatur omnis odio.
+        <br>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, quod, porro magnam possimus ex similique illo assumenda! Quaerat, aut, ipsa natus qui quia unde officia cumque fuga dolorum consequatur ducimus!
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+    </div>
+</div>
+
+
+<br>
+
+<div class="wrap demo-x">
+    <div class="inner" id="testOut">
+        scroll...
+        <br>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, voluptatem, dolorum soluta praesentium a deserunt quos sit cupiditate amet reiciendis rerum quae! Impedit, beatae, adipisci in similique eligendi corporis tempore.
+
+        <div class="wrap demo-x" style="width: 100px;">
+            <div class="inner" id="testIn">
+                scroll...
+                <br>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, voluptatem, dolorum soluta praesentium a deserunt quos sit cupiditate amet reiciendis rerum quae! Impedit, beatae, adipisci in similique eligendi corporis tempore.
+                <br>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, consectetur, doloribus nam accusamus atque ex voluptate modi itaque pariatur cum. Odit temporibus quaerat laudantium ipsum soluta explicabo et blanditiis similique!
+                <br>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, error nisi provident incidunt ea quis qui enim quam sapiente beatae vitae natus necessitatibus laboriosam magnam facere labore pariatur omnis odio.
+                <br>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, quod, porro magnam possimus ex similique illo assumenda! Quaerat, aut, ipsa natus qui quia unde officia cumque fuga dolorum consequatur ducimus!
+                <br>
+                scroll...
+                <br>
+                scroll...
+                <br>
+                scroll...
+                <br>
+                scroll...
+                <br>
+                scroll...
+                <br>
+                scroll...
+                <br>
+                scroll...
+                <br>
+                scroll...
+                <br>
+                scroll...
+                <br>
+                scroll...
+                <br>
+                scroll...
+                <br>
+                scroll...
+                <br>
+                scroll...
+                <br>
+                scroll...
+                <br>
+                scroll...
+                <br>
+                scroll...
+                <br>
+                scroll...
+                <br>
+                scroll...
+                <br>
+                scroll...
+                <br>
+                scroll...
+                <br>
+                scroll...
+            </div>
+        </div>
+        <br>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, consectetur, doloribus nam accusamus atque ex voluptate modi itaque pariatur cum. Odit temporibus quaerat laudantium ipsum soluta explicabo et blanditiis similique!
+        <br>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, error nisi provident incidunt ea quis qui enim quam sapiente beatae vitae natus necessitatibus laboriosam magnam facere labore pariatur omnis odio.
+        <br>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, quod, porro magnam possimus ex similique illo assumenda! Quaerat, aut, ipsa natus qui quia unde officia cumque fuga dolorum consequatur ducimus!
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+        <br>
+        scroll...
+    </div>
+</div>
+
+
+</body>
+<script>
+
+var $ = jQuery;
+
+var xx = $("#test2").scrollable();
+
+$("#test1, #test3").each(function() {
+    $(this).scrollable({
+        //preventDefaultWheel: true
+    });
+});
+
+$("#testOut").scrollable({
+    autoHide: 0
+    //, preventDefaultWheel: true
+});
+
+$("#testIn").scrollable({
+    autoHide: 0
+    //, preventDefaultWheel: true
+    , onWheel: function(e) {
+        // e.stopPropagation();
+    }
+});
+
+setTimeout(function() {
+    xx.goTo({
+        x: 0
+        , y: -xx.state._y
+    }, 1000);
+}, 1000);
+
+var id = 0;
+setInterval(function() {
+    // $("#test1, #test0")
+        // .append("<p>pppp</p>")
+        // .height($("#test1").height() + 50);
+
+    // $("#test1").attr("dir", "rtl");
+    $("#test2").append("<p>pppp" + id++ + "</p>")
+}, 2000);
+
+/*$("#test2").scrollable({
+    autoHide: false,
+    onInit: function() {
+        this.scrollTo(this.$el, {
+            x: this.state.dir ? -5 : 5,
+            y: -10
+        })
+    },
+    onWheel: function() {
+        console.log(this.state)
+    },
+    onScroll: function() {
+        console.log("onScroll")
+    },
+    onStartPress: function() {
+        console.log("onStartPress")
+    },
+    onEndPress: function() {
+        console.log("onEndPress")
+    },
+    onStartDrag: function() {
+        console.log("onStartDrag")
+    },
+    onEndDrag: function() {
+        console.log("onEndDrag")
+    }
+});*/
+
+var testX = $("#testX").scrollable({
+    autoHide: 0,
+    wheelSpeed: 120,
+    wheelDir: "x",
+    onScroll: function() {
+    }
+});
+
+
+$("#goToFirst").click(function(e) {
+    e.preventDefault();
+    testX.goTo({x: 0,y:0}, 1000);
+});
+$("#goToLast").click(function(e) {
+    e.preventDefault();
+    testX.goTo({x: -testX.state._x,y:0}, 1000, function() {
+
+        // 回调, 用以判断是否滚到头了
+        // 最大值: testX.fixPos(testX.state.x, "x")
+        console.log(testX.state.x - 100, testX.fixPos(testX.state.x, "x"));
+    });
+});
+</script>
+</html>

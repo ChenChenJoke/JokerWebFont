@@ -1,0 +1,16 @@
+{
+  "name": "ui",
+  "version": "1.0.1",
+  "authors": [
+    "yuji <yuji@baidu.com>"
+  ],
+  "description": "Visual specification & Common ui library.",
+  "keywords": [],
+  "license": "MIT",
+  "homepage": "http://gitlab.pro/common-ui/ui",
+  "ignore": [
+    "**/*",
+    "!src/**",
+    "!dist/**",
+  ]
+}

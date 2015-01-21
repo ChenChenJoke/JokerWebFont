@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Slide Demo</title>
+	<link rel="stylesheet" href="http://view.gitlab.pro/common-ui/css-layout/raw/master/demo/css/base.css">
+	<link rel="stylesheet" href="http://view.gitlab.pro/common-ui/css-layout/raw/master/demo/css/layout.css">
+	<link rel="stylesheet" href="css/slide.css">
+</head>
+<body>
+	<div class="l-wrap">
+		<div class="s-mtm" style="height:150px;">
+			<div class="l-g1-2">
+				<h3 class="">效果展示-图片轮播：</h3>
+				<div class="slide-wrap s-mtm">
+				</div>	
+			</div>
+			<div class="l-g0">
+				<h3>代码配置：</h3>
+				<div class="s-mtm">
+					<p><a href="resource/tpl/call-slide-1.html" target="_blank">HTML</a></p>
+					<p><a href="js/call-slide-1.js" target="_blank">JavaScript</a></p>
+					<p><a href="css/call-slide-1.css" target="_blank">CSS</a></p>
+				</div>
+			</div>	
+		</div>
+		<div class="s-mtm" style="height:150px;">
+			<div class="l-g1-2">
+				<h3 class="">效果展示-Tab切换：</h3>
+				<div class="tabs-wrap s-mtm">
+				</div>
+			</div>
+			<div class="l-g0">
+				<h3>代码配置：</h3>
+				<div class="">
+					<p><a href="resource/tpl/call-slide-2.html" target="_blank">HTML</a></p>
+					<p><a href="js/call-slide-2.js" target="_blank">JavaScript</a></p>
+					<p><a href="css/call-slide-2.css" target="_blank">CSS</a></p>					
+				</div>
+			</div>			
+		</div>
+
+		<h3 class="">参数说明：</h3>
+		<div class="control-wrap s-mtm s-mbl">
+		    <div class="param-line">
+		    	<span class="key">offset:</span> 
+		    	<span class="value">Number</span> 
+		    	<span class="description">默认选中项的偏移量（默认值1为第二项，应修改为0）</span>
+		    </div>
+			<div class="param-line"><span class="key">navSize:</span> 
+				<span class="value">Number</span> 
+				<span class="description">一屏呈现的项数（默认值3，应修改为1）</span>
+			</div>
+			<div class="param-line"><span class="key">itemSize:</span> 
+				<span class="value">Number</span> 
+				<span class="description">每一项的像素宽度</span>
+			</div>
+			<div class="param-line"><span class="key">scrollDuration:</span> 
+				<span class="value">Number</span> 
+				<span class="description">滚动过程花费的时间（默认为300毫秒）</span>
+			</div>
+			<div class="param-line"><span class="key">autoScroll:</span> 
+				<span class="value">Boolean</span> 
+				<span class="description">是否自动滚动（默认值false）</span>
+			</div>
+			<div class="param-line"><span class="key">autoDuration:</span> 
+				<span class="value">Number</span> 
+				<span class="description">两次滚动的时间间隔（默认值5000毫秒）</span>
+			</div>
+			<div class="param-line"><span class="key">containerId:</span> 
+				<span class="value">String</span> 
+				<span class="description">轮播容器的选择器</span>
+			</div>
+			<div class="param-line"><span class="key">dir:</span> 
+				<span class="value">String</span> 
+				<span class="description">页面的文字流（默认值为"ltr"，可选"rtl"）</span>
+			</div>
+			<div class="param-line"><span class="key">direction:</span> 
+				<span class="value">String</span> 
+				<span class="description">滚动的轴向（默认值为"h"横向滚动，可选"v"表示纵向滚动）</span>
+			</div>
+			<div class="param-line"><span class="key">autoScrollDirection:</span> 
+				<span class="value">String</span> 
+				<span class="description">自动滚动发生的方向（默认值"forward"表示前向或向下滚动，可选项"backforward"表示向后或向上滚动）</span>
+			</div>
+			<div class="param-line"><span class="key">data:</span> 
+				<span class="value">Array</span> 
+				<span class="description">数组的每一项是一个包含属性"content"和idKey的key-value对象（"content"是该项的HTML字符串，idKey是该项的标识值）</span>
+			</div>
+			<div class="param-line"><span class="key">idKey:</span> 
+				<span class="value">String</span> 
+				<span class="description">每一项的唯一标识符（默认值为"id"）</span>
+			</div>
+			<div class="param-line"><span class="key">defaultId:</span> 
+				<span class="value">String</span> 
+				<span class="description">第一项的idKey值</span>
+			</div>
+			<div class="param-line"><span class="key">quickSwitch:</span> 
+				<span class="value">Boolean</span> 
+				<span class="description">快捷切换的控制开关（默认值false，可选项true表示开启快捷切换）</span>
+			</div>
+			<div class="param-line"><span class="key">showTitle:</span> 
+				<span class="value">Boolean</span> 
+				<span class="description">为每项添加title属性的开关（默认值为false，可选项true将为每一项添加title属性值为其内容本身）</span>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/slide.js"></script>
+	<script src="js/call-slide-1.js"></script>
+	<script src="js/call-slide-2.js"></script>
+</body>
+</html>

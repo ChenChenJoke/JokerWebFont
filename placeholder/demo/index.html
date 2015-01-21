@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>placeholder</title>
+    <style>
+*{ margin: 0; padding: 0;}
+
+/*html, */
+
+body{
+    font-size: 13px;
+    width: 600px;
+    margin: 20px auto;
+    height: auto;
+}
+
+h3{
+    padding: 20px 0 10px 0;
+}
+
+p {
+    margin: 5px 0;
+}
+
+.test1{
+    border: 1px solid #000;
+    width: 300px;
+    margin: 10px;
+}
+
+.test1 input{
+    height: auto;
+    border: 1px solid #000;
+    height: 10px;
+    line-height: 1;
+    padding: 10px 3px;
+}
+
+.test1 input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+.reset {
+    padding: 10px;
+}
+.reset input{
+    margin: 20px;
+    border: 3px solid #f00;
+    padding: 20px;
+}
+
+.demo3{
+    background: url(http://www.gravatar.com/avatar/526420b231d4c2d869cb8abef96ae5b6?s=24&d=mm) no-repeat 0 5px;
+    padding-left: 27px !important;
+    margin-left: 5px !important;
+    line-height: 30px !important;
+}
+
+.code{
+    border: none;
+    background: #333;
+    color: #fff;
+    resize: none;
+    width: 100%;
+}
+    </style>
+    <script src="js/mod.js"></script>
+    <script src="js/js_framework.js"></script>
+    <script src="../src/placeholder.js"></script>
+</head>
+<body>
+
+    <h1>Hello placeholder</h1>
+    <p>test passed: IE6-8 / Safari / Chrome / Firefox / Opera</p>
+    <h3>simple:</h3>
+    <textarea class="code" rows="2">
+<input id="simple" placeholder="placeholderplaceholderplaceholder">
+$("#simple").placeholder()
+    </textarea>
+    <p><input id="simple" placeholder="placeholderplaceholderplaceholder"></p>
+        
+    <h3>How to set content of placeholder?</h3>
+
+    <p>from placeholder attribute:</p>
+    <textarea class="code" rows="1">
+<input id="simple" placeholder="placeholder">
+    </textarea>
+    <p>or by param:</p>
+    <textarea class="code" rows="1">
+$("#simple").placeholder("content")
+    </textarea>
+
+    <h3>How to set style of placeholder?</h3>
+    <p>Automatically inherit from input:</p>
+    <textarea class="code" rows="3">
+<input id="demo1" style="margin:10px; padding:10px; border: 2px solid #000;" placeholder="Automatically">
+$("#demo1").placeholder();
+    </textarea>
+    <p><input id="demo1" style="margin:10px; padding:10px; border: 2px solid #000;" placeholder="Automatically"></p>
+    <p>Specify the css value:</p>
+    <textarea class="code" rows="7">
+<p><input id="demo2"></p>
+$("#demo2").placeholder("css", {
+    customCss: {
+        'color': '#f00'
+        , 'padding-left': '10px'
+    }
+});
+    </textarea>
+    <p><input id="demo2"></p>
+    <p>Specify the custom class:</p>
+    <textarea class="code" rows="14">
+.demo3{
+    background: url(http://www.gravatar.com/avatar/526420b231d4c2d869cb8abef96ae5b6?s=24&d=mm) no-repeat 0 5px;
+    padding-left: 27px !important;
+    margin-left: 5px !important;
+    line-height: 30px !important;
+}
+<input id="demo3" style="height: 30px; line-height: 30px; padding-left: 5px;">
+$("#demo3").placeholder("custom class", {
+    hideOnFocus: true
+    , customClass: "demo3"
+});
+    </textarea>
+    <p><input id="demo3" style="height: 30px; line-height: 30px; padding-left: 5px;"></p>
+    <h3>How to reset?</h3>
+    <textarea class="code" rows="17">
+<input type="text" id="test1" placeholder="xx">
+<button id="reset">reset!</button>
+var xx1 = $("#test1").placeholder("click the button →", {
+    hideOnFocus: true
+    , customClass: "custom" 
+});
+$("#reset").click(function() {
+    var flag = $(this).parent().hasClass("reset");
+    flag
+    ? $(this).parent().removeClass("reset")
+    : $(this).parent().addClass("reset");
+    xx1.reset("been reseted", {
+        customCss: {
+            'color': flag ? '' : 'red'
+        }
+    });
+});
+    </textarea>
+
+    <div class="test1">
+        <input type="text" id="test1" placeholder="xx">
+        <button id="reset">reset!</button>
+    </div>
+
+    <h3>Support textarea?</h3>
+    <p>As you can see:</p>
+    <textarea class="code" rows="6">
+&lt;textarea id=&quot;test3&quot; cols=&quot;30&quot; rows=&quot;10&quot; style=&quot;padding: 3px;overflow:hidden;&quot;&gt;&lt;/textarea&gt;
+$("#test3").placeholder("Description: Bind two or more handlers to the matched elements, to be executed on alternate clicks.", {
+    hideOnFocus: true
+});
+    </textarea>
+
+    
+    <textarea id="test3" cols="30" rows="10" style="padding: 3px; overflow:hidden"></textarea>
+</body>
+
+<script>
+var $ = window.jQuery;
+
+
+$("#simple").placeholder();
+$("#demo1").placeholder();
+$("#demo2").placeholder("css", {
+    customCss: {
+        'color': '#f00'
+        , 'padding-left': '10px'
+    }
+});
+
+$("#demo3").placeholder("custom class", {
+    hideOnFocus: true
+    , customClass: "demo3"
+});
+
+var xx1 = $("#test1").placeholder("click the button →", {
+    hideOnFocus: true
+    , customClass: "custom" 
+});
+
+$("#reset").click(function() {
+    var flag = $(this).parent().hasClass("reset");
+    flag
+    ? $(this).parent().removeClass("reset")
+    : $(this).parent().addClass("reset");
+
+    xx1.reset("been reseted", {
+        customCss: {
+            'color': flag ? '' : 'red'
+        }
+    });
+});
+
+$("#test3").placeholder("Description: Bind two or more handlers to the matched elements, to be executed on alternate clicks.Description: Bind two or more handlers to the matched elements, to be executed on alternate clicks.Description: Bind two or more handlers to the matched elements, to be executed on alternate clicks.Description: Bind two or more handlers to the matched elements, to be executed on alternate clicks.Description: Bind two or more handlers to the matched elements, to be executed on alternate clicks.", {
+    hideOnFocus: true
+});
+
+</script>
+</html>

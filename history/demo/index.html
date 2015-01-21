@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>HISTORY</h1>
+    <button id="trigger">CHANGE HASH</button>
+    <br/>
+    <div class="dynamic"></div>
+    <script>module = {};</script>
+    <script src="./js/jquery-1.8.3.min.js"></script>
+    <script src="./js/md5.js"></script>
+    <script src="../src/history.js"></script>
+    <script>
+        !function(){
+            /* emulate outer usage */
+            /* test data */
+            var HASHLIST = [1,2,3,4];
+            var index = -1;
+            function callback(hash) {
+                var params = "?app=news&act=articles&model=normal&country=jp&type="+hash+"&num=10";
+                $.ajax({
+                    url: "http://api.ghk.hao123.com/" + params,
+                    dataType: "jsonp",
+                    jsonp: "jsonp",
+                    jsonpCallback: "ghao123_" + hex_md5(params,16)
+                }).done(function(data){
+                    $(".dynamic").html(JSON.stringify(data.content.data.contents[hash]));
+                });
+            }
+
+            // init a history instance
+            var historyObj = new History();
+
+            $("#trigger").click(function() {
+                index == 3 ? index = 0 : index++;
+                var newHash = HASHLIST[index];
+                // bind trigger
+                historyObj.pushState(newHash);
+            });    
+
+            // capture history custom event
+            $(historyObj).on("popstate", function(e, hash) {
+                callback(hash);
+            });
+
+        }();
+    </script>
+</body>
+
+</html>

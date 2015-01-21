@@ -1,0 +1,16 @@
+{
+  "name": "slide",
+  "version": "1.0.1",
+  "authors": [
+    "liangdongjie <liangdongjie@baidu.com>",
+    "lijing <lijing@baidu.com>"
+  ],
+  "description": "slide",
+  "keywords": [],
+  "license": "MIT",
+  "homepage": "http://gitlab.pro/common-ui/slide",
+  "ignore": [
+    "**/*",
+    "!src/**"
+  ]
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="51px" height="25px" viewBox="0 0 51 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>Slice 1</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-1" stop-color="#FFFFFF">
+            <stop stop-opacity="0" offset="0%"></stop>
+            <stop offset="50.989012%"></stop>
+            <stop offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <rect id="Rectangle-2" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup" x="0" y="0" width="51" height="25"></rect>
+    </g>
+</svg>

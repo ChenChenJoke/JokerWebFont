@@ -1,0 +1,100 @@
+/*
+ * common arrow
+ *
+ * @author yuji
+ * @version 0.1.0
+ * @update 2013/11/12
+ *
+ * @compatible IE6-10 / Chrome / Firefox / Opera / Safari
+ *
+ * @extend
+ * .ui-arrow-t(op)               Arrow Up
+ * .ui-arrow-r(ight)             Arrow Right
+ * .ui-arrow-b(ottom)            Arrow down
+ * .ui-arrow-l(eft)              Arrow Left
+ *
+ * .ui-arrow-a(lign)a(ll)        Align Centers
+ * .ui-arrow-a(lign)v(ertical)   Align Vertical   Centers
+ * .ui-arrow-a(lign)h(orizontal) Align Horizontal Centers
+ *
+ * @usage
+ * <div style="position: relative;">
+ *     <b class="ui-arrow ui-arrow-t ui-arrow-ah"></b>
+ *     <span>content</span>
+ * </div>
+ */
+
+/**
+ * 1. Make IE6/7 border transparent.
+ * 2. Default width.
+ * 3. Transparent border with problem on firefox.
+ */
+.ui-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    border-style: solid;
+    /* 3 */
+    border-color: rgba(255,255,255,0);
+    border-color: transparent\0;
+    *border-color: white;
+    /* 1 */
+    *filter: chroma(color=white);
+    border-width: 5px;
+    /* 2 */
+}
+
+/**
+ * 1. Double border-width.
+ * 2. Default border color.
+ * 3. Support IE6/7
+ */
+.ui-arrow-t {
+    top: -10px;
+    /* 1 */
+    border-bottom-color: #00b075;
+    /* 2 */
+}
+.ui-arrow-r {
+    right: -10px;
+    border-left-color: #00b075;
+}
+.ui-arrow-b {
+    bottom: -10px;
+    border-top-color: #00b075;
+}
+.ui-arrow-l {
+    left: -10px;
+    border-right-color: #00b075;
+}
+.ui-arrow-aa {
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    *bottom: auto;
+    *top: 50%;
+    *margin-top: -5px;
+    /* 3 */
+    *right: auto;
+    *left: 50%;
+    *margin-left: -5px;
+}
+.ui-arrow-av {
+    margin: auto 0;
+    top: 0;
+    bottom: 0;
+    *bottom: auto;
+    *top: 50%;
+    *margin-top: -5px;
+}
+.ui-arrow-ah {
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    *right: auto;
+    *left: 50%;
+    *margin-left: -5px;
+}

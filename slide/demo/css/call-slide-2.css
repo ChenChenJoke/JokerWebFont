@@ -1,0 +1,10 @@
+.tabs-wrap{position: relative;width: 280px;height: 30px;line-height: 30px;}
+.tabs-wrap .ctrl{position: absolute;width: 100%;}
+.tabs-wrap .wrap{overflow: hidden;}
+.tabs-wrap .ui-nav{width: 240px;margin: 0 auto;}
+.tabs-wrap .nav-item-list{position: relative;}
+.tabs-wrap .nav-item{float: left;}
+.tabs-wrap .nav-item a{display: block;width: 80px;}
+.tabs-wrap .prev, .tabs-wrap .next{position: absolute;cursor: pointer;;width: 20px;}
+.tabs-wrap .prev{left: 0;}
+.tabs-wrap .next{right: 0;}

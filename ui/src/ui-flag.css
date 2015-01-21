@@ -1,0 +1,49 @@
+.ui-flag {
+    overflow: hidden;
+    line-height: 1;
+    padding-bottom: 5px;
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    -webkit-transform:scale(.8);
+    -moz-transform:scale(.8);
+    -ms-transform:scale(.8);
+    transform:scale(.8);
+    /*-webkit-filter: drop-shadow(0 1px 1px rgba(0,0,0,.2));
+    -moz-filter: drop-shadow(0 1px 1px rgba(0,0,0,.2));
+    -ms-filter: drop-shadow(0 1px 1px rgba(0,0,0,.2));
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,.2));*/
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+}
+.ui-flag_t {
+    display: inline-block;
+    padding: 1px 3px;
+    padding: 1px 2px\9;
+    border-radius: 3px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-size: 8px\9;
+    color: #fff;
+    background: #F66540;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .15);
+}
+.ui-flag .ui-arrow {
+    bottom: -3px;
+    right: -4px;
+    border-top-color: #F66540;
+    border-width: 3px\9;
+    bottom: -1px\9;
+    *bottom: 1px;
+}
+.ui-flag--green .ui-flag_t {
+    background: #00ac73;
+}
+.ui-flag--green .ui-arrow {
+    border-top-color: #00ac73;
+}
+.ui-flag--blue .ui-flag_t {
+    background: #4787ED;
+}
+.ui-flag--blue .ui-arrow {
+    border-top-color: #4787ED;
+}

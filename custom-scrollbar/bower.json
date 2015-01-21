@@ -1,0 +1,20 @@
+{
+  "name": "custom-scrollbar",
+  "version": "1.0.1",
+  "authors": [
+    "yuji <yuji@baidu.com>",
+    "wangmingfei <wangmingfei@baidu.com>"
+  ],
+  "description": "A jQuery plugin for custom scrollbar",
+  "main": "src/scrollable.js",
+  "keywords": [
+    "scroll",
+    "scrollable"
+  ],
+  "license": "MIT",
+  "homepage": "http://gitlab.pro/common-ui/custom-scrollbar",
+  "ignore": [
+    "**/*",
+    "!src/**"
+  ]
+}

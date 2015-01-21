@@ -1,0 +1,26 @@
+a{text-decoration: none;color: #5a5a5a;}
+
+.slide-wrap{position: relative;width: 154px;}
+.slide-wrap .wrap{overflow: hidden;}
+.slide-wrap .nav-item-list{position: relative;}
+.slide-wrap .nav-item{float: left}
+.slide-wrap .prev, .slide-wrap .next{position: absolute;top: 35%;z-index: 1;cursor: pointer;font-size: 30px;font-weight: bold;color: #fff;background: #aaa;text-align: center;}
+.slide-wrap .prev:hover, .slide-wrap .next:hover{color: #eee;}
+.slide-wrap .prev{left: 0;}
+.slide-wrap .next{right: 0;}
+
+.tabs-wrap{position: relative;width: 280px;height: 30px;line-height: 30px;}
+.tabs-wrap .ctrl{position: absolute;width: 100%;right: 0px;}
+.tabs-wrap .wrap{overflow: hidden;}
+.tabs-wrap .ui-nav{width: 240px;margin: 0 auto;}
+.tabs-wrap .nav-item-list{position: relative;}
+.tabs-wrap .nav-item{float: left;}
+.tabs-wrap .nav-item a{display: block;width: 80px;background: #f9fbfb;text-align: center;}
+.tabs-wrap .nav-item-current a{background: #f5f7f7;color: #00b075;font-weight: bold;}
+.tabs-wrap .prev, .tabs-wrap .next{position: absolute;cursor: pointer;background: #00b075;color: #fff;width: 20px;font-weight: bold;text-align: center;}
+.tabs-wrap .prev{left: 0;}
+.tabs-wrap .next{right: 0;}
+
+.key{font-weight: bold;}
+.value{color: red;}
+.description{font-style: italic;}

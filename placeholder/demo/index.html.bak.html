@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>templ</title>
+<!--
+<link rel="stylesheet" href="" />
+<script src=""></script>
+-->
+<style>
+body,p,b,dl,dd,table,td,th,input,textarea,xmp,pre,img,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6{ margin:0; padding:0;}        /*去内外边距*/
+img,iframe{ border:none;}   /*去默认边框*/
+ol,ul,li{ list-style:none;}     /*重置列表样式*/
+img,input,label,button{ vertical-align:middle;}     /*预置对齐方式*/
+table{ border-collapse:collapse; border-spacing:0; width:100%;} /*重置表格*/
+address,caption,cite,code,dfn,em,strong,th,var,b,i{ font-style:normal; font-weight:normal;}     /*重置默认字体样式*/
+button,input,select,textarea{ font-size:100%;}      /*重置字体大小*/
+body{ font:12px/1.231 arial;}   /*统一字体,解决中英混排行高不一致的问题*/
+
+/*
+清除浮动
+fix:
+1.ff背景溢出
+2.OPERA高度塌陷
+*/
+.clearfix{zoom:1;}
+.clearfix:after{ clear:both; display:block; visibility:hidden; overflow:hidden; height:0 !important; line-height:0;font-size:xx-large; content:" x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x ";
+}
+
+body{ padding:20px;}
+button{ font-size:12px;}
+h4{ font:bold 20px "微软雅黑";}
+pre{ font:normal 14px "微软雅黑";}
+
+
+.red{ color:#f00 !important;}
+</style>
+</head>
+<body>
+<pre>
+<h4>placeholder兼容方案</h4>
+
+1. value方式模拟没有语义，破坏真实value值，在form提交或需要value值交互等情况下造成问题，故使用物理方法模拟
+
+2. 优先考虑原生placeholder支持，默认样式与其保持一致
+
+3. API优雅设计，id，数组，dom集合等等都可以混用，链式绑定，可选value值指定（优先级最高），可选className指定（默认"placeholder"）
+
+4. 参考原生placeholder全选不能选中，保留此策略（但在IE全选情况下无解）
+
+5. 处理大量细节（如用户点击在placeholder上input无法获焦，智能垂直居中等）
+
+<h4>更新</h4>
+[2011-03-19]
+1.chrome下placeholder属性存在bug，表现为无法居中对齐，无法受跟位置有关的样式（如padding, margin, line-height等）控制，单独修正为模拟方式，其他webkit浏览器表现正常
+
+[2011-05-19]
+1.考虑到部分场景涉及到动态修改placeholder内容，增加"set"外部修改接口
+
+<h4>调用：</h4>
+G.placeholder.bind(el, val, cls)
+
+[el - string/domCollection/array]
+1. string(id)
+2. dom集合(类似getElementsByTagName)
+3. array[string, dom](id 或者 dom)
+
+[val - string]
+提示内容，优先级高于placeholder属性值，可省略，为兼容HTML5推荐使用placeholder属性
+
+[cls - string]
+placeholder层对应className，省略默认为"placeholder"
+
+<h4>示例：</h4>
+html:
+<xmp>
+<input type="text" id="test1" placeholder="请输入...">
+</xmp>
+1. 简单调用
+
+.red{ color:#f00;}
+
+G.placeholder.bind("test1", "妈的", "red")
+</pre>
+
+<input type="text" id="test1" placeholder="请输入...">
+
+<pre>
+
+2.省略（下同）：
+
+G.placeholder.bind("test2")
+</pre>
+
+<input type="text" id="test2" placeholder="请输入...">
+
+<pre>
+
+2.数组（id+dom混合）：
+
+G.placeholder.bind(["test3", document.getElementById("test4")])
+</pre>
+
+<input type="text" id="test3" placeholder="请输入...">
+<input type="text" id="test4" placeholder="请输入..." style="border:none; border:1px solid #06C; height:23px; line-height:23px; padding-left:2px;">
+
+<pre>
+
+3.dom集合
+
+G.placeholder.bind(document.getElementById("ul").getElementsByTagName("INPUT"))
+</pre>
+
+<ul id="ul">
+    <li class="li">姓&emsp;&emsp;名：<input type="text" placeholder="请输入姓名" /></li>
+    <li class="li">手&ensp;机&ensp;号：<input type="text" /></li>
+    <li class="li">电子邮箱：<input type="text" placeholder="电子邮箱" /></li>
+</ul>
+
+<pre>
+
+4.支持链式绑定，如上述例子：
+G.placeholder.bind("test1", "妈的", "red").bind("test2").bind(["test3", document.getElementById("test4")]).bind(document.getElementById("ul").getElementsByTagName("INPUT"));
+
+
+5.支持外部动态修改内容
+
+var test5Holder = G.placeholder.bind("test5");
+
+document.getElementById("test5Set1").onclick = function() {
+    test5Holder.set("测试内容1");
+}
+
+修改内容为：
+</pre>
+
+
+<span id="test5Set1" style="cursor:pointer;">测试内容1</span>
+<span id="test5Set2" style="cursor:pointer;">测试内容2</span>
+
+<br>
+<input type="text" id="test5" placeholder="请输入...">
+
+
+</body>
+<script src="js/placeholder.js"></script>
+<script>
+
+/*TEST*/
+G.placeholder.bind("test1", "妈的", "red");
+G.placeholder.bind("test2");
+G.placeholder.bind(["test3", document.getElementById("test4")]);
+G.placeholder.bind(document.getElementById("ul").getElementsByTagName("INPUT"));
+
+//可以链式写法
+//G.placeholder.bind("test1", "妈的", "red").bind("test2").bind(["test3", document.getElementById("test4")]).bind(document.getElementById("ul").getElementsByTagName("INPUT"));
+
+//动态修改内容
+var test5Holder = G.placeholder.bind("test5");
+
+document.getElementById("test5Set1").onclick = function() {
+    test5Holder.set("测试内容1");
+}
+
+document.getElementById("test5Set2").onclick = function() {
+    test5Holder.set("测试内容2");
+}
+</script>
+</html>
+
+
+
+

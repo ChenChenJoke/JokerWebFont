@@ -1,0 +1,183 @@
+/*
+
+ui-form
+ */
+
+/**
+ * 1. IE8 fallback
+ * 2. Fix IE6 bug.
+ * 3. Fix firefox font-size bug.
+ */
+
+.ui-form{}
+
+.ui-form_radio,
+.ui-form_checkbox{
+    position: relative;
+}
+
+.ui-form_radio input[type="radio"],
+.ui-form_checkbox input[type="checkbox"]{
+    vertical-align: middle;
+    cursor: pointer;
+    outline: none;
+    opacity: 0;
+}
+
+.ui-form_radio input[type="radio"] + span,
+.ui-form_checkbox input[type="checkbox"] + span{
+    vertical-align: middle;
+    line-height: 1.5;
+    cursor: pointer;
+    text-indent: 12px;
+    display: inline-block;
+}
+
+/* 1 */
+@media \0screen {
+    .ui-form_radio input[type="radio"] + span,
+    .ui-form_checkbox input[type="checkbox"] + span{
+        text-indent: 3px;
+    }
+}
+
+.ui-form_radio input[type="radio"] + span::before,
+.ui-form_checkbox input[type="checkbox"] + span::before{
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid #D7DCDE;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+.ui-form_radio input[type="radio"] + span::before{
+    border-radius: 50%;
+    border: 2px solid #D7DCDE;
+    background: #fff;
+    width: 12px;
+    height: 12px;
+    margin: 0 2px;
+    top: 0;
+}
+
+.ui-form_radio input[type="radio"]:focus,
+.ui-form_checkbox input[type="checkbox"]:focus{
+    outline: none;
+}
+
+.ui-form_radio:hover input[type="radio"] + span::before,
+.ui-form_checkbox:hover input[type="checkbox"] + span::before{
+    border-color: #06AC76;
+}
+
+.ui-form_radio input[type="radio"]:focus + span::before,
+.ui-form_checkbox input[type="checkbox"]:focus + span::before{
+    border-color: #06AC76;
+}
+
+.ui-form_radio input[type="radio"] + span::after,
+.ui-form_checkbox input[type="checkbox"] + span::after{
+    content: "✓";
+    font-family: Tahoma;
+    width: 16px;
+    height: 16px;
+    vertical-align: top;
+    cursor: pointer;
+    position: absolute;
+    top: -6px;
+    left: 3px;
+    text-indent: 0;
+    display: none;
+    font-size: 18px;
+    color: #fff;
+    outline: none;
+    margin-left: -2px \9;
+    margin-top: -1px \9;
+    margin-left: -2px \0;
+    margin-top: 0 \0;
+}
+
+.ui-form_radio input[type="radio"] + span::after{
+    content: "";
+    border-radius: 50%;
+    background: #fff;
+    width: 8px;
+    height: 8px;
+    top: 4px;
+    left: 6px;
+    border-radius: 50%;
+    background: #53C5A0;
+    background-image: -o-radial-gradient(50% 164%, #0DA064 82%, #53C5A0 100%);
+    background-image: -moz-radial-gradient(50% 164%, #0DA064 82%, #53C5A0 100%);
+    background-image: -ms-radial-gradient(50% 164%, #0DA064 82%, #53C5A0 100%);
+    background-image: radial-gradient(50% 164%, #0DA064 82%, #53C5A0 100%);
+    margin-left: -1px \9;
+    margin-top: -1px \9;
+    margin-left: 0 \0;
+    margin-top: 0 \0;
+}
+
+.ui-form_radio input[type="radio"]:checked + span::before,
+.ui-form_checkbox input[type="checkbox"]:checked + span::before{
+    border-color: #06AC76;
+}
+
+.ui-form_checkbox input[type="checkbox"]:checked + span::before{
+    background: #06AC76;
+}
+
+.ui-form_radio input[type="radio"]:checked + span::after,
+.ui-form_checkbox input[type="checkbox"]:checked + span::after{
+    display: inline-block;
+}
+
+.ui-form_checkbox input[type="checkbox"]:disabled + span::before,
+.ui-form_radio input[type="radio"]:disabled + span::before{
+    border-color: #eee !important;
+    background: #fefefe !important;
+}
+
+.ui-form_checkbox input[type="checkbox"]:disabled + span::after{
+    color: #ddd !important;
+}
+.ui-form_radio input[type="radio"]:disabled + span::after{
+    background: #ddd !important;
+}
+
+/*
+
+skin
+ */
+.ui-form--blue{}
+.ui-form--blue .ui-form_radio:hover input[type="radio"] + span::before,
+.ui-form--blue .ui-form_checkbox:hover input[type="checkbox"] + span::before{
+    border-color: #46A4FF;
+}
+
+.ui-form--blue .ui-form_radio input[type="radio"]:focus + span::before,
+.ui-form--blue .ui-form_checkbox input[type="checkbox"]:focus + span::before{
+    border-color: #46A4FF;
+}
+.ui-form--blue .ui-form_radio input[type="radio"]:checked + span::before,
+.ui-form--blue .ui-form_checkbox input[type="checkbox"]:checked + span::before{
+    border-color: #46A4FF;
+}
+
+.ui-form--blue .ui-form_checkbox input[type="checkbox"]:checked + span::before{
+    background: #46A4FF;
+}
+
+.ui-form--blue .ui-form_radio input[type="radio"] + span::after{
+    background: #53C5A0;
+    background-image: -o-radial-gradient(50% 164%, #46A4FF 82%, #2C97DE 100%);
+    background-image: -moz-radial-gradient(50% 164%, #46A4FF 82%, #2C97DE 100%);
+    background-image: -ms-radial-gradient(50% 164%, #46A4FF 82%, #2C97DE 100%);
+    background-image: radial-gradient(50% 164%, #46A4FF 82%, #2C97DE 100%);
+}

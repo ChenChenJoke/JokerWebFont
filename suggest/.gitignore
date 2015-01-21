@@ -1,0 +1,38 @@
+_*
+node_modules
+
+## OSX
+.DS_Store
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+## Windows
+# Windows image file caches
+Thumbs.db 
+
+# Folder config file
+Desktop.ini
+
+## Linux
+.*
+!.gitignore
+*~
+
+# KDE
+.directory
+
+# Vim
+.*.sw[a-z]
+*.un~
+Session.vim
+
+# SVN 
+.svn/
+
+# SublimeText project files
+/*.sublime-project

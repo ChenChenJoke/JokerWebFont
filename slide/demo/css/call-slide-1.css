@@ -1,0 +1,7 @@
+.slide-wrap{position: relative;width: 154px;}
+.slide-wrap .wrap{overflow: hidden;}
+.slide-wrap .nav-item-list{position: relative;}
+.slide-wrap .nav-item{float: left}
+.slide-wrap .prev, .slide-wrap .next{position: absolute;top: 45%;z-index: 1;cursor: pointer;}
+.slide-wrap .prev{left: 0;}
+.slide-wrap .next{right: 0;}

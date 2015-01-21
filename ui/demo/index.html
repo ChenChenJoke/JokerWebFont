@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.ltr.css">
+    <link rel="stylesheet" href="../dist/ui.min.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="code/lib/codemirror.css">
+    <link rel="stylesheet" href="code/theme/obsidian.css">
+</head>
+
+<body>
+
+<div class="demo-top s-pvm">
+    <div class="l-wrap">
+        <h1>Global Hao123 UI</h1>
+    </div>
+</div>
+
+<div class="l-wrap">
+    <div class="demo-hd">
+        <h2>Visual specification & Common ui library</h2>
+        <p>gitlab: <a href="http://gitlab.pro/common-ui/ui">http://gitlab.pro/common-ui/ui</a></p>
+        <p>trello: <a href="https://trello.com/c/YYC6S690/21-ui">https://trello.com/c/YYC6S690/21-ui</a></p>
+    </div>
+</div>
+
+<div class="l-wrap cf">
+    <div class="l-fl s-mvm s-mrm demo-nav_wrap">
+        <ul id="demoNav" class="demo-box demo-nav">
+            <h4 class="demo-box_hd">Navigation</h4>
+            <li><a href="#arrow"><span>arrow&nbsp;&nbsp;<b class="ui-arrow ui-arrow-r ui-arrow-av"></b></span></a></li>
+            <li><a href="#flag"><span>flag<em class="ui-flag ui-flag--blue">
+                    <b class="ui-arrow ui-arrow-b"></b>
+                    <span class="ui-flag_t">SEXY</span>
+                </em></span></a></li>
+            <li><a href="#button"><span class="ui-btn ui-btn-s ui-btn--white">button</span></a></li>
+            <li><a href="#bubble" class="ui-bubble-hover">bubble
+                <div class="ui-bubble ui-bubble-b ui-bubble-s" style="top: -30px;left:5px;">
+                    <b class="ui-arrow ui-bubble_out" style="margin-top:-3px;"></b>
+                    <b class="ui-arrow ui-bubble_in" style="margin-top:-3px;"></b>
+                    <p class="ui-bubble_t">goto bubble</p>
+                </div>
+            </a></li>
+            <li><a href="#badge">badge @todo</a></li>
+            <li><a href="#loading">loading <i class="ui-o ui-o-s"></i></a></li>
+            <li><a href="#star"><i class="ui-star">★<em class="ui-star_bg">★</em></i>Star</a></li>
+            <li><a href="#form"><label class="ui-form_checkbox" style="margin-left: -15px;"><input type="checkbox"><span style="text-indent: 25px;">form</span></label></a></li>
+        </ul>
+    </div>
+    <div class="l-ff">
+        <div id="arrow" class="demo-box s-mvm">
+            <h4 class="demo-box_hd">Arrow</h4>
+            <dl class="s-pam demo-info">
+                <dt><label class="master">.ui-arrow</label><span>Arrow</span></dt>
+                <dd><label>.ui-arrow-t</label><span>top | Arrow Up</span></dd>
+                <dd><label>.ui-arrow-r</label><span>right | Arrow Right</span></dd>
+                <dd><label>.ui-arrow-b</label><span>bottom | Arrow down</span></dd>
+                <dd><label>.ui-arrow-l</label><span>left | Arrow Left</span></dd>
+                <dd><label>.ui-arrow-aa</label><span>align all | Align Centers</span></dd>
+                <dd><label>.ui-arrow-av</label><span>align vertical | Align Vertical Centers</span></dd>
+                <dd><label>.ui-arrow-ah</label><span>align horizontal | Align Horizontal Centers</span></dd>
+                <div class="ui-bubble ui-bubble-b" style="left:50%; bottom: 5px; display:none\9;">
+                    <b class="ui-arrow ui-bubble_out"></b>
+                    <b class="ui-arrow ui-bubble_in"></b>
+                    <p class="ui-bubble_t">
+                        <i class="i-bulb ui-bubble_i"></i>You can edit and real-time preview, please try your self</a>
+                    </p>
+                </div>
+            </dl>
+            <div class="demo-play">
+                <p class="s-mtl">Simple:</p>
+                <div style="position: relative; background:#00b075;">
+                    <b class="ui-arrow ui-arrow-t ui-arrow-ah"></b>
+                    <span>content</span>
+                </div>
+
+                <p class="s-mtl">In tabs:</p>
+                <ul class="demo-arrow--tab">
+                    <p class="pre"><b class="ui-arrow ui-arrow-l ui-arrow-aa"></b></p>
+                    <p class="next"><b class="ui-arrow ui-arrow-r ui-arrow-aa"></b></p>
+                    <li>Saúde</li>
+                    <li class="cur">
+                        Últimas
+                        <p class="ft"><b class="ui-arrow ui-arrow-b ui-arrow-ah"></b></p>
+                    </li>
+                    <li>Cotidiano</li>
+                </ul>
+
+                <p class="s-mtl">In navbar:</p>
+                <dl class="demo-arrow--nav cf">
+                    <dt><b class="ui-arrow ui-arrow-r"></b>Utilidades</dt>
+                    <dd>Torpedo</dd>
+                    <dd>Grátis</dd>
+                    <dd>CAIXA</dd>
+                    <dd>Loterias</dd>
+                </dl>
+
+                <p class="s-mtl">In magicbox:</p>
+                <dl class="demo-arrow--nav demo-arrow--nav-stars cf">
+                    <dt><b class="ui-arrow ui-arrow-r ui-arrow-av"></b>Resumo</dt>
+                    <dd>&nbsp;</dd>
+                    <dd>&nbsp;</dd>
+                    <dd>&nbsp;</dd>
+                    <dd>&nbsp;</dd>
+                </dl>
+            </div>
+        </div>
+
+        <div id="flag" class="demo-box s-mvm">
+            <h4 class="demo-box_hd">Flag</h4>
+            <dl class="s-pam demo-info">
+                <dt><label class="master">.ui-flag</label><span>Flag</span></dt>
+                <dd><label>.ui-flag_t</label><span>text | Inner Text</span>
+                </dd>
+                <dd><label class="fork">.ui-flag--green</label><span>green | Green Background</span></dd>
+                <dd><label class="fork">.ui-flag--blue</label><span>blue | Blue Background</span></dd>
+            </dl>
+            <div class="demo-play">
+                <p class="s-mtl">Simple:</p>
+                <em class="ui-flag">
+                    <b class="ui-arrow ui-arrow-b"></b>
+                    <span class="ui-flag_t">HOT</span>
+                </em>
+
+                <p class="s-mtl">Color scheme:</p>
+                <em class="ui-flag ui-flag--green">
+                    <b class="ui-arrow ui-arrow-b"></b>
+                    <span class="ui-flag_t">NEW</span>
+                </em>
+                <em class="ui-flag ui-flag--blue" style="margin-left: 40px">
+                    <b class="ui-arrow ui-arrow-b"></b>
+                    <span class="ui-flag_t">SEXY</span>
+                </em>
+
+                <p class="s-mtl">In links:</p>
+                <div class="demo-flag--links">
+                    <div class="demo-box">
+                        <a href="#">
+                            <span>Lésbica</span>
+                            <em class="ui-flag">
+                                <b class="ui-arrow ui-arrow-b"></b>
+                                <span class="ui-flag_t">HOT</span>
+                            </em>
+                        </a>
+                        <a href="#">
+                            <span>Mulheres Gostosas</span>
+                            <em class="ui-flag ui-flag--green">
+                                <b class="ui-arrow ui-arrow-b"></b>
+                                <span class="ui-flag_t">NEW</span>
+                            </em>
+                        </a>
+                        <a href="#">
+                            <span>Pornografía</span>
+                            <em class="ui-flag ui-flag--blue">
+                                <b class="ui-arrow ui-arrow-b"></b>
+                                <span class="ui-flag_t">SEXY</span>
+                            </em>
+                        </a>
+                    </div>
+                </div>
+
+                <p class="s-mtl">In tabs:</p>
+                <ul class="demo-arrow--tab">
+                    <p class="pre"><b class="ui-arrow ui-arrow-l ui-arrow-aa"></b></p>
+                    <p class="next"><b class="ui-arrow ui-arrow-r ui-arrow-aa"></b></p>
+                    <li>
+                        <em class="ui-flag ui-flag--green">
+                            <b class="ui-arrow ui-arrow-b"></b>
+                            <span class="ui-flag_t">NEW</span>
+                        </em>Saúde
+                    </li>
+                    <li class="cur">
+                        <em class="ui-flag">
+                            <b class="ui-arrow ui-arrow-b"></b>
+                            <span class="ui-flag_t">HOT</span>
+                        </em>
+                        Últimas
+                        <p class="ft"><b class="ui-arrow ui-arrow-b ui-arrow-ah"></b></p>
+                    </li>
+                    <li><em class="ui-flag ui-flag--blue">
+                            <b class="ui-arrow ui-arrow-b"></b>
+                            <span class="ui-flag_t">SEXY</span>
+                        </em>Cotidiano</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="button" class="demo-box s-mvm">
+            <h4 class="demo-box_hd">Button</h4>
+            <dl class="s-pam demo-info">
+                <dt><label class="master">.ui-btn</label><span>Button</span></dt>
+                <dd><label>.ui-btn_i</label><span>icon | Inner icon</span></dd>
+                <dd><label>.ui-btn-s</label><span>small | Smaller size</span></dd>
+                <dd><label>.ui-btn-l</label><span>large | Larger size</span></dd>
+                <dd><label>.ui-btn_bar</label><span>bar | Bar wrapper</span></dd>
+                <dd><label>.ui-btn_bar-r</label><span>bar right | Bar wrapper & Align right</span></dd>
+                <dd><label class="fork">.ui-btn--white</label><span>white | White background</span></dd>
+                <dd><label class="fork">.ui-btn--blue</label><span>blue | blue Background</span></dd>
+                <dd><label class="fork">.ui-btn--gray</label><span>gray | Gray background</span></dd>
+            </dl>
+            <div class="demo-play">
+                <p class="s-mtl">Simple:</p>
+                <a href="#" class="ui-btn" onclick="return false" hidefocus="true">default</a>
+
+                <p class="s-mtl">Color scheme:</p>
+                <a href="#" class="ui-btn" onclick="return false" hidefocus="true">default</a>
+                <a href="#" class="ui-btn ui-btn--gray" onclick="return false" hidefocus="true">gray</a>
+                <a href="#" class="ui-btn ui-btn--blue" onclick="return false" hidefocus="true">blue</a>
+                <a href="#" class="ui-btn ui-btn--white" onclick="return false" hidefocus="true">white</a>
+
+                <p class="s-mtl">Different size:</p>
+                <a href="#" class="ui-btn ui-btn-s" onclick="return false" hidefocus="true">small</a>
+                <a href="#" class="ui-btn" onclick="return false" hidefocus="true">default</a>
+                <a href="#" class="ui-btn ui-btn-l" onclick="return false" hidefocus="true">large</a>
+                <a href="#" class="ui-btn ui-btn-l ui-btn--white" onclick="return false" hidefocus="true"><img class="ui-btn_i" src="img/favicon.ico" alt="">image</a>
+                <a href="#" class="ui-btn ui-btn-l ui-btn--white" onclick="return false" hidefocus="true"><i class="i-edit ui-btn_i"></i>icon</a>
+
+                <p class="s-mtl">In bars:</p>
+
+                <div class="ui-btn_bar" style="background: #eee;">
+                    <a href="#" class="ui-btn" onclick="return false" hidefocus="true">button</a>
+                    <a href="#" class="ui-btn ui-btn--gray" onclick="return false" hidefocus="true">button</a>
+                </div>
+
+                <div class="s-mtm ui-btn_bar ui-btn_bar-r" style="background: #eee;">
+                    <a href="#" class="ui-btn" onclick="return false" hidefocus="true">button</a>
+                    <a href="#" class="ui-btn ui-btn--gray" onclick="return false" hidefocus="true">button</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="bubble" class="demo-box s-mvm">
+            <h4 class="demo-box_hd">Bubble</h4>
+            <dl class="s-pam demo-info">
+                <dt><label class="master">.ui-bubble</label><span>Bubble</span></dt>
+                <dd><label>.ui-bubble-t</label><span>top | With Arrow Up</span></dd>
+                <dd><label>.ui-bubble-r</label><span>right | With Arrow Right</span></dd>
+                <dd><label>.ui-bubble-b</label><span>bottom | With Arrow Down</span></dd>
+                <dd><label>.ui-bubble-l</label><span>left | With Arrow Left</span></dd>
+                <dd><label>.ui-bubble-s</label><span>smaller | Smaller size</span></dd>
+                <dd><label>.ui-bubble-hover</label><span>hover | Control visibility by hover, using on parent</span></dd>
+                <dd><label>.ui-bubble_in</label><span>in-arrow | Arrow of Inner</span></dd>
+                <dd><label>.ui-bubble_out</label><span>out-arrow | Arrow of Outer</span></dd>
+                <dd><label>.ui-bubble_more</label><span>more-link | Internal more link</span></dd>
+                <dd><label>.ui-bubble_close</label><span>close-button | Internal close button</span></dd>
+                <dd><label>.ui-bubble_i</label><span>icon | Internal icon</span></dd>
+            </dl>
+            <div class="demo-play">
+                <p class="s-mtl">Simple:</p>
+                <div class="ui-bubble ui-bubble-b" style=" position: relative;">
+                    <b class="ui-arrow ui-bubble_out"></b>
+                    <b class="ui-arrow ui-bubble_in"></b>
+                    <p class="ui-bubble_t">
+                        Milhares dos participantes</a>
+                    </p>
+                </div>
+
+                <p class="s-mtl">Different direction:</p>
+                <div class="ui-bubble ui-bubble-r" style=" position: relative;">
+                    <b class="ui-arrow ui-bubble_out"></b>
+                    <b class="ui-arrow ui-bubble_in"></b>
+                    <p class="ui-bubble_t">
+                        Milhares dos participantes</a>
+                    </p>
+                </div>
+
+                <p class="s-mtl">Smaller size:</p>
+                <div class="ui-bubble ui-bubble-t ui-bubble-s" style=" position: relative;">
+                    <b class="ui-arrow ui-bubble_out"></b>
+                    <b class="ui-arrow ui-bubble_in"></b>
+                    <p class="ui-bubble_t">participantes</p>
+                </div>
+
+                <p class="s-mtl">On logo:</p>
+                <div class="demo-bubble--logo">
+                    <div>
+                        <a href="#">
+                            <img src="img/luckylogo.gif">
+                        </a>
+                    </div>
+                    <div class="ui-bubble ui-bubble-t" style="position: relative; top: 7px; left:0;">
+                        <b class="ui-arrow ui-bubble_out"></b>
+                        <b class="ui-arrow ui-bubble_in"></b>
+                        <a href="#" class="ui-bubble_close" onclick="return false" hidefocus="true">×</a>
+                        <p class="ui-bubble_t">
+                            Milhares dos participantes! dos participantes!<a href="#" class="ui-bubble_more"><b class="ui-arrow ui-arrow-r ui-arrow-av"></b>Clique para</a>
+                        </p>
+                        <span class="ui-btn_bar-r">
+                            <a href="#" onclick="return false" class="ui-btn" hidefocus="true">prêmiosprêmios</a>
+                        </span>
+                    </div>
+                </div>
+
+                <p class="s-mtl">On Magicbox:</p>
+                <ul class="demo-bubble--magicbox">
+                    <li>
+                        <div class="ui-bubble ui-bubble-b" style="top: -90px; left:0;">
+                            <b class="ui-arrow ui-bubble_out"></b>
+                            <b class="ui-arrow ui-bubble_in"></b>
+                            <a href="#" class="ui-bubble_close" onclick="return false" hidefocus="true">×</a>
+                            <p class="ui-bubble_t">
+                                <i class="i-bulb ui-bubble_i"></i>Milhares dos participantes! dos participantes!<a href="#" class="ui-bubble_more"><b class="ui-arrow ui-arrow-r ui-arrow-av"></b>Clique para</a>
+                            </p>
+                            <span class="ui-btn_bar-r">
+                                <a href="#" onclick="return false" class="ui-btn" hidefocus="true">prêmiosprêmios</a>
+                            </span>
+                        </div>
+                        <i class="i-nav-speedtest"></i>
+                    </li>
+                </ul>
+
+                <p class="s-mtl">By Hover:</p>
+                <ul class="demo-bubble--magicbox demo-bubble--hover">
+                    <li class="ui-bubble-hover">
+                        <div class="ui-bubble ui-bubble-b">
+                            <b class="ui-arrow ui-bubble_out"></b>
+                            <b class="ui-arrow ui-bubble_in"></b>
+                            <p class="ui-bubble_t">
+                                <i class="i-bulb ui-bubble_i"></i>Milhares dos participantes! dos participantes!
+                            </p>
+                        </div>
+                        <i class="i-nav-speedtest"></i>
+                    </li>
+                    <li class="ui-bubble-hover">
+                        <div class="ui-bubble ui-bubble-b">
+                            <b class="ui-arrow ui-bubble_out"></b>
+                            <b class="ui-arrow ui-bubble_in"></b>
+                            <p class="ui-bubble_t">
+                                <i class="i-bulb ui-bubble_i"></i>Milhares dos participantes! dos participantes!
+                            </p>
+                        </div>
+                        <i class="i-nav-speedtest"></i>
+                    </li>
+                    <li>
+                        <div class="ui-bubble ui-bubble-l ui-bubble-s" style="top: 20px; margin-left: 10px;">
+                            <b class="ui-arrow ui-bubble_out" style="margin-top:-4px;"></b>
+                            <b class="ui-arrow ui-bubble_in" style="margin-top:-4px;"></b>
+                            <p class="ui-bubble_t">Hover me!</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="loading" class="demo-box s-mvm">
+            <h4 class="demo-box_hd">loading</h4>
+            <dl class="s-pam demo-info">
+                <dt><label class="master">.ui-o</label><span>Loading</span></dt>
+                <dd><label>.ui-o-s</label><span>smaller | Smaller size</span></dd>
+            </dl>
+            <div class="demo-play">
+                <p class="s-mtl">Inline:</p>
+                <div>
+                    <i class="ui-o ui-o-s" style="height: 36px; width: 36px;">Loading...</i>
+                </div>
+                <p class="s-mtl">Block:</p>
+                <div style="height: 100px; width: 100px; border: 1px solid #ccc;">
+                    <div class="ui-o"></div>
+                </div>
+                <p class="s-mtl">Cover:</p>
+                <div style="width: 100%; height: 100px; position: relative;">
+                    <div style="width: 100%; height: 100%; position: absolute;">
+                        <div style="background:#000; height: 100%; opacity: .35;"></div>
+                        <div class="ui-o" style="position: absolute; top: 0;"></div>
+                    </div>
+
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores nemo quam laborum magni obcaecati! Provident, iusto, et accusamus sint officia officiis similique repellendus possimus. Dicta, aliquam beatae enim quod architecto.
+                </div>
+            </div>
+        </div>
+
+        <div id="star" class="demo-box s-mvm">
+            <h4 class="demo-box_hd">star</h4>
+            <dl class="s-pam demo-info">
+                <dt><label class="master">.ui-star</label><span>Star</span></dt>
+                <dd><label>.ui-star-l</label><span>Larger | Larger size</span></dd>
+                <dd><label>.ui-star_bg</label><span>Background | Background</span></dd>
+                <dd><label>.ui-star-half</label><span>Half | Half Star</span></dd>
+                <dd><label>.ui-star-cur</label><span>Current | Current Star</span></dd>
+            </dl>
+            <div class="demo-play">
+                <p class="s-mtl">Stars:</p>
+                <div class="demo-star cf">
+                    <a href="#" class="ui-star ui-star-l ui-star-cur">★<span class="ui-star_bg">★</span></a>
+                    <a href="#" class="ui-star ui-star-l ui-star-half ui-star-cur">★<span class="ui-star_bg">★</span></a>
+                    <a href="#" class="ui-star ui-star-l">★<span class="ui-star_bg">★</span></a>
+                    <a href="#" class="ui-star ui-star-cur">★<span class="ui-star_bg">★</span></a>
+                    <a href="#" class="ui-star ui-star-cur">★<span class="ui-star_bg">★</span></a>
+                    <a href="#" class="ui-star ui-star-cur ui-star-half">★<span class="ui-star_bg">★</span></a>
+                    <a href="#" class="ui-star">★<span class="ui-star_bg">★</span></a>
+                    <a href="#" class="ui-star">★<span class="ui-star_bg">★</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div id="form" class="demo-box s-mvm">
+            <h4 class="demo-box_hd">form</h4>
+            <dl class="s-pam demo-info">
+                <dt><label class="master">.ui-form</label><span>Form</span></dt>
+                <dd><label>.ui-form_checkbox</label><span>Checkbox Element</span></dd>
+                <dd><label>.ui-form_radio</label><span>Radio Element</span></dd>
+                <dd><label class="fork">.ui-form--blue</label><span>blue theme</span></dd>
+            </dl>
+            <div class="demo-play">
+                <p class="s-mtl">Default theme:</p>
+
+                <div class="ui-form">
+                    <label class="ui-form_checkbox"><input checked type="checkbox"><span>Check Box 1</span></label>
+                    <br>
+                    <label class="ui-form_checkbox"><input type="checkbox"><span>Check Box 1</span></label>
+                    <br>
+                    <label class="ui-form_checkbox"><input disabled type="checkbox"><span>Check Box 1</span></label>
+                    <br>
+                    <label class="ui-form_checkbox"><input checked disabled type="checkbox"><span>Check Box 1</span></label>
+                    <br>
+                    <label class="ui-form_radio"><input name="radio" type="radio"><span>radio 1</span></label>
+                    <br>
+                    <label class="ui-form_radio"><input name="radio" type="radio"><span>radio 1</span></label>
+                    <br>
+                    <label class="ui-form_radio"><input disabled name="radio" type="radio"><span>radio 1</span></label>
+                    <br>
+                    <label class="ui-form_radio"><input checked disabled name="radio" type="radio"><span>radio 1</span></label>
+                </div>
+
+                <p class="s-mtl">Blue theme:</p>
+
+                <div class="ui-form--blue">
+                    <label class="ui-form_checkbox"><input checked type="checkbox"><span>Check Box 1</span></label>
+                    <br>
+                    <label class="ui-form_checkbox"><input type="checkbox"><span>Check Box 1</span></label>
+                    <br>
+                    <label class="ui-form_checkbox"><input disabled type="checkbox"><span>Check Box 1</span></label>
+                    <br>
+                    <label class="ui-form_checkbox"><input checked disabled type="checkbox"><span>Check Box 1</span></label>
+                    <br>
+                    <label class="ui-form_radio"><input name="radio" type="radio"><span>radio 1</span></label>
+                    <br>
+                    <label class="ui-form_radio"><input name="radio" type="radio"><span>radio 1</span></label>
+                    <br>
+                    <label class="ui-form_radio"><input disabled name="radio" type="radio"><span>radio 1</span></label>
+                    <br>
+                    <label class="ui-form_radio"><input checked disabled name="radio" type="radio"><span>radio 1</span></label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="l-wrap s-mtm">
+    <div id="disqus_thread"></div>
+    <!--
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ui18n'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    -->
+</div>
+</body>
+
+<script src="code/lib/codemirror.js"></script>
+<script src="code/mode/xml/xml.js"></script>
+<script src="code/mode/javascript/javascript.js"></script>
+<script src="code/mode/css/css.js"></script>
+<script src="code/mode/htmlmixed/htmlmixed.js"></script>
+<script src="code/addon/emmet/emmet.js"></script>
+
+<script>
+!function(demos, delay) {
+    if(!demos || !demos.length) return;
+    try{
+        demos = [].slice.call(demos);
+    }
+    catch(e){
+        return;
+    }
+    demos.forEach(function(demo) {
+        CodeMirror(demo.parentNode, {
+            value: demo.innerHTML.replace(/^(\r\n|\s)*|(\r\n|\s)*$/g, "").replace(/^\s{16}/mg, "")
+            , mode:  "text/html"
+            , theme: "obsidian"
+        }).on("change", function(editor) {
+            clearTimeout(delay);
+            delay = setTimeout(function() {
+                demo.innerHTML = editor.getValue() || "&nbsp;";
+            }, 16);
+        });
+        demo.classList.add("demo-playing");
+    });
+}(document.querySelectorAll && document.querySelectorAll(".demo-play"));
+
+document.addEventListener && function(DOC, nav, rAF, top, scrolling) {
+    top = nav.offsetTop;
+    DOC.addEventListener("scroll", function(e) {
+        scrolling = 1;
+    });
+    rAF(function() {
+        if(scrolling) {
+            scrolling = 0;
+            nav.classList[scrollY >= top ? "add" : "remove"]("sticky");
+        }
+        rAF(arguments.callee);
+    });
+}(document, document.querySelector("#demoNav"), requestAnimationFrame
+    || webkitRequestAnimationFrame
+    || mozRequestAnimationFrame
+    || function(callback){
+        setTimeout(callback, 1000 / 60);
+    });
+</script>
+
+</html>

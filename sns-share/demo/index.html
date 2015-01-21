@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hao123</title>
+
+    <style>
+*{margin: 0; padding: 0;}
+    </style>
+    <link rel="stylesheet" href="../src/sns-share.css">
+    <script src="js/console.js"></script>
+    <script src="js/mod.js"></script>
+    <script src="js/js_framework.js"></script>
+    <script src="../src/sns-share.js"></script>
+</head>
+<body>
+<h4>simple, default services list</h4>
+<div id="snsShare"></div>
+<br>
+
+<h4>custom services list</h4>
+<div id="snsShare2"></div>
+
+<h4>share direct</h4>
+<a href="#" onclick="return !1" id="snsShare3">share</a>
+
+<br>
+
+
+<h4>see more demo:</h4>
+
+<a href="share_image.html">how to share a picture</a>
+
+</body>
+<script>
+
+$("#snsShare").snsShare({
+   ui:{
+        top: 0
+    },
+    info: {
+        url: "http://ar.hao123.com/?netest=" + +new Date
+        , image: "http://ar.hao123.com/resource/ar/img/i-hot-sprite-small_01.png"
+        , summary: "summary"
+        , title: "titlexxxx"
+        , input: "input"
+    }
+});
+
+$("#snsShare2").snsShare(null, ["twitter", "zingme"], function(data) {
+    data.info.url = "http://br.hao123.com";
+    return data;
+});
+
+$("#snsShare3").on("click", function() {
+    $.snsShare({
+        service: "twitter",
+        info: {
+            url: "http://hao123.com"
+        },
+        ui: {
+            left: 1000
+        }
+    })
+})
+</script>
+</html>

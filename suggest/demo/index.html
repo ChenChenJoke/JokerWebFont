@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>g.sug</title>
+<link rel="stylesheet" href="css/doc.css" />
+<style>
+/*提示层外框*/
+.sug-wrap {
+	position:absolute;
+	top:30px;
+	left:-1px;
+	border:1px solid #aaa;
+	background:#fff;
+	width:491px;
+	color:#444;
+	z-index:999;
+}
+
+/*ie6 shim*/
+.sug-shim{ position:absolute; top:-1px; left:-1px; z-index:-1; filter:alpha(opacity="0");
+	width:403px;
+	height:232px;
+}
+
+/*列表外框*/
+.sug-wrap ol{ font:bold 14px/21px verdana; cursor:default;}
+
+/*列表项*/
+.sug-wrap li{ padding:1px 6px;}
+
+/*选中样式*/
+.sug-wrap .sug-select{ background:#D5F8BD;}
+
+/*头部*/
+.sug-wrap .top{ font-weight:normal; color:#999; height:21px; line-height:21px; background:#eee; padding:0 2px;}
+
+/*底部*/
+.sug-wrap .bot{ position:relative; height:19px; line-height:19px; font-weight:normal; border-top:1px solid #666;}
+
+/*高亮查询词*/
+.sug-wrap .sug-query{ font-weight:normal;}
+
+/*提示不能匹配查询词*/
+.sug-wrap .sug-querynull{ font-weight:normal;}
+
+.sug-wrap .sug-close{ position:absolute; right:0; cursor:pointer; background:#CCF;}
+</style>
+</head>
+<body>
+<div class="box">
+	<h4>Suggest开源组件<span>实现输入补全、推荐等功能</span></h4>
+    <span style="color:#999">wait...</span>
+</div>
+<div class="box">
+	<h4>Test &amp; API</h4>
+    
+    <div class="box_l">
+    	<h5>测试用例</h5>
+        <form id="testSearch" class="test-search" action="http://www.google.co.th/search?">
+        	<div class="input-wrap">
+            	<b class="shadow"></b>
+                <input class="input" name="q" id="testSearchInput" type="text" autocomplete="off">
+			</div>
+            <button class="btn" hidefocus="true" id="testSearchBtn" type="submit"></button>
+            
+            <span id="testSearchParams" style="display:none">
+            	<input type="hidden" name="hl" value="th">
+            </span>
+        </form>
+        
+        
+		<br>
+		<select><option>遮挡测试</option></select>
+		<br>
+		<select><option>遮挡测试</option></select>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<select><option>遮挡测试</option></select>
+        <br><br>
+        <h5>状态监控</h5>
+        <span id="sWatch" class="s-watch"></span>
+        <h5>测试要点</h5>
+        <ul class="text-list">
+        <li>1.</li>
+        <li>2.</li>
+        </ul>
+        
+        <h5>Bugs</h5>
+        <ul class="text-list">
+        <li>1. Chrome下按END键转移焦点（输入框为空时，允许页面滚动）需要按两次</li>
+        <li>2.</li>
+        </ul>
+        
+        <h5>更新日志</h5>
+        <dl class="text-list">
+        <dt>[2011-10-25 继续修复QA提出问题]</dt>
+        <dd>1. 更改了sug触发的逻辑，之前通过比对当前输入词与查询词，不同则触发。这导致了比较严重的bug，比如当前输入"a"，切换焦点关闭sug后，再次输入"a"不再触发sug</dd>
+        <dd>2. 回车保持sug隐藏策略（保留选中项、索引等），以确保用户提交打开新窗口后，返回sug仍能按上/下键打开刚才的选择</dd>
+        </dl>
+        <dl class="text-list">
+        <dt>[2011-10-22 由QA严格测试后修正一些交互问题]</dt>
+        <dd>1. 当返回数据为空时提交搜索后返回输入框焦点，按上/下键弹空的sug层</dd>
+        <dd>2. 同上，tab+alt 切出浏览器焦点后亦会复现</dd>
+        <dd>3. <em>[调整策略]</em> 考虑到用户体验，保持tab键功能，允许用户切出焦点</dd>
+        </dl>
+        <dl class="text-list">
+        <dt>[2011-10-8 代码重构]</dt>
+        <dd>1. 优化代码结构、逻辑，大幅度提升压缩比</dd>
+        <dd>2. 抽离工具函数，便于迁移至现成js框架下</dd>
+        <dd>3. <em>[调整策略]</em> 考虑之前的对齐方式可能会侵入布局结构（比如依赖于input外层元素并需设其为相对定位），增加一种无依赖的纯绝对定位方式（动态计算input坐标）</dd>
+        <dd>4. 考虑input外层元素可能为绝对定位等情况，不再强制设其为相对定位，增加判断</dd>
+        <dd>5. 抽离shim样式，避免动态计算高度</dd>
+        <dd>6. 考虑兼容autoCompleteData模式、支持noSubmit、屏蔽IE6下ESC清空input值等情况，劫持onkeydown，即：重复绑定input的keydown，请用on(input, "keydown", function(){...})形式</dd>
+        <dd>7. <em>[调整策略]</em> 参考google，持续按上/下键时延迟响应和按ESC关闭后通过上/下键可以打开并保持选择项</dd>
+        <dd>8. <em>[调整策略]</em> 增加提示项和输入不匹配时的单独样式</dd>
+        </dl>
+    </div>
+    <div class="box_r">
+    <form id="testForm" onSubmit="return false">
+    	<h5>参数配置<span id="tipSave">修改保存（回车）后当前实例应用生效</span></h5>
+		<ul class="box-code">
+        <li class="first"><em>{</em></li>
+        <li><em>classNameWrap:</em><input name="classNameWrap">|| "sug-wrap",<span>[String] ==> 提示层外框className</span></li>
+        <li><em>classNameQuery:</em><input name="classNameQuery">,<span>[String] ==> 查询词高亮className<br>[Undefined] ==> 不增加额外包裹标签</span></li>
+        <li><em>classNameQueryNull:</em><input name="classNameQueryNull">,<span>[String] ==> 提示条目不能匹配查询词时className</span></li>
+        <li><em>classNameSelect:</em><input name="classNameSelect">|| "sug-select",<span>[String] ==> 列表项响应className</span></li>
+        <li><em>classNameClose:</em><input name="classNameClose">|| "sug-close",<span>[String] ==> 关闭按钮className（绑定关闭事件）</span></li>
+        <li><em>classNameShim:</em><input name="classNameShim">|| "sug-shim",<span>[String] ==> ie6"shim"className（IE6下iframe垫片）</span></li>
+        <li><em>locAbs:</em><input name="locAbs">|| false,<span>[Boole] ==> 提示层是否绝对定位（根据实际场景决定，推荐默认的依赖父元素相对定位，避免动态计算位置）</span></li>
+        <li><em>noSubmit:</em><input name="noSubmit">|| false,<span>[Boole] ==> 是否阻止提交表单（默认鼠标点击会触发提交，不干涉回车事件）</span></li>
+        <li><em>customUrl:</em><input name="customUrl">|| false,<span>[Function(paras)] ==> 数据请求前动态修改url（参数为字符串型数据请求参数）</span></li>
+        <li><em>pressDelay:</em><input name="pressDelay">|| 3,<span>[Boole || Number] ==> 上/下键选择的延迟程度<br>[false || 0 || Null ...] ==> 禁止干涉（速度过快，用户难以准确选择）<br>[1] ==> 禁止按住连续选择（只能通过多次敲击进行选择）<br>[Number] ==> 数字(>1)越大，响应越慢<br>[Undefined] ==> 3（比较合理的响应速度）</span></li>
+        <li><em>autoFocus:</em><input name="autoFocus">|| false,<span>[Boole] ==> 输入框是否自动获取焦点</span></li>
+        <li><em>delay:</em><input name="delay">|| 200,<span>[Boole] ==> 输入触发延迟速度</span></li>
+        <li><em>n:</em><input name="n">|| 10,<span>[Number] ==> 控制显示条目上限</span></li>
+        
+        <li><em>autoCompleteData:</em><input name="autoCompleteData">|| false,<span>[Array] ==> autoComplete模式数据源（优先于sug模式，nonNUL则进入autoComplete模式）</span></li>
+        <li><em>url:</em><input name="url">|| false,<span>[String] ==> 数据源url</span></li>
+        <li><em>charset:</em><input name="charset">,<span>[String] ==> 数据源charset</span></li>
+        
+        <li><em>callbackFn:</em><input name="callbackFn">|| false,<span>[String] ==> 回调函数名（形如：function a.b.c({data})）</span></li>
+        <li><em>callbackName:</em><input name="callbackName">|| false,<span>[String] ==> 回调接口变量名（形如：window.a.b = {data}）</span></li>
+        
+        <li><em>callbackDataKey:</em><input name="callbackDataKey">|| false,<span>[String] ==> 数据接口筛选（如{s: [$1,$2,$3]}，callbackDataKey为"s"）</span></li>
+        <li><em>callbackDataNum:</em><input name="callbackDataNum">|| false,<span>[Number] ==> 数据接口筛选（如[s,[$1,$2,$3]]，callbackDataNum为1）</span></li>
+        
+        
+        <li><em>requestQuery:</em><input name="requestQuery">|| false,<span>[String] ==> 配置数据接口中的查询参数</span></li>
+        <li><em>requestParas:</em><input name="requestParas">|| {},<span>[Object] ==> 附加请求参数（json形式）</span></li>
+        
+        
+        <li><em>onSelect:</em><input name="onSelect">,<span>[Function] ==> 鼠标点选或回车提交时（在表单提交前）</span></li>
+        <li><em>onShow:</em><input name="onShow">,<span>[Function] ==> 提示层显示时</span></li>
+        <li><em>onHide:</em><input name="onHide">,<span>[Function] ==> 提示层隐藏时</span></li>
+        <li><em>onRequest:</em><input name="onRequest">,<span>[Function] ==> 数据请求前</span></li>
+        <li><em>onSucess:</em><input name="onSucess">,<span>[Function] ==> 数据请求成功时</span></li>
+        <li><em>onError:</em><input name="onError">,<span>[Function] ==> 数据请求失败时</span></li>
+        
+        <li><em>templ:</em><textarea name="templ" cols="30" rows="10"></textarea><span>[Function(data, q)] ==> 自定义拼装内容html片段</span></li>
+        
+        <li class="first"><em>}</em></li>
+		</ul>
+        
+        <div class="bar-btn">
+        	<button id="btnSave" class="btn btn-save" hidefocus="true" type="submit">保存</button>
+        	<span id="tipSave2" class="tip-save tip-save2" style="display:none">保存成功！</span>
+        </div>
+    </form>
+    </div>
+</div>
+
+<div class="box copyright">
+<em>THANKS:</em> <a href="http://leecade.github.com/" target="_blank">斯人</a>、张国伟
+</div>
+</body>
+<script src="../dist/suggest.js"></script>
+<script src="js/doc.js"></script>
+</html>

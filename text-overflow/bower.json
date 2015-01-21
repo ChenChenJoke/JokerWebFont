@@ -1,0 +1,16 @@
+{
+  "name": "text-overflow",
+  "version": "1.0.1",
+  "authors": [
+    "yuji <yuji@baidu.com>"
+  ],
+  "description": "There is a pure CSS universal solution of \"text-overflow: ellipsis\"",
+  "keywords": [],
+  "license": "MIT",
+  "homepage": "http://gitlab.pro/common-ui/text-overflow",
+  "ignore": [
+    "**/*",
+    "!src/**",
+    "!dist/**",
+  ]
+}

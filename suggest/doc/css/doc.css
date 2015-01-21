@@ -1,0 +1,100 @@
+body,p,b,dl,dd,table,td,th,input,button,textarea,xmp,pre,img,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6{margin:0;padding:0}img,iframe{border:0}ol,ul,li{list-style:none}img,input,label,button{vertical-align:middle}table{border-collapse:collapse;border-spacing:0;width:100%}address,caption,cite,code,dfn,em,strong,th,var,b,i{font-style:normal;font-weight:normal}button,input,select,textarea{font-size:100%}body{font:12px/1.231 arial;_zoom:expression(function(el){document.execCommand('BackgroundImageCache',false,true);el.style.zoom = "1"}(this))}.clearfix{zoom:1}.clearfix:before,.clearfix:after{content:"";display:table}.clearfix:after{clear:both}
+::-moz-focus-inner{ border:none;}
+:focus{ outline:none;}
+
+body{ background:#EFEFEF;}
+a{ color:#444;}
+.hlwrap li{list-style:decimal; color:#ddd;}	/*fix highlight*/
+
+.btn{ border:none; cursor:pointer; display:inline-block; text-decoration:none; color:#666; font:bold 12px Arial; text-align:center; outline:none;}
+.btn-save{ width:64px; height:48px; line-height:48px; background:url(../img/bg.png); float:right;}
+.btn-save_click{ background-position:0 -49px; padding-top:1px; padding-left:1px; padding:0\9;}
+.tip-save{ color:#090 !important;}
+.tip-save_error{ color:#c33 !important;}
+.tip-save2{ float:right; margin-right:15px;}
+
+.box{ width:970px; background:#fff; border:1px solid #DADADA; margin:0 auto; padding:10px 20px; margin-bottom:10px; overflow:hidden;}
+
+.box h4{ font:bold 18px/1.7 "微软雅黑"; border-bottom:1px solid #E5E5E5; color:#444; margin-bottom:10px;}
+.box h4 span{ font:normal 12px "微软雅黑"; color:#666; margin-left:5px;}
+
+.box h5{ font:bold 14px/1 "微软雅黑"; color:#444; margin-bottom:10px;}
+.box h5 span{ font:normal 12px "微软雅黑"; color:#999; margin-left:5px;}
+
+.box_l{ float:left; width:500px; margin-right:7px;}
+.box_r{ overflow:hidden; zoom:1; border-left:1px solid #E5E5E5; padding-left:10px;}
+
+.box-code{ font:normal 12px monaco,verdana,Helvetica,Tahoma,Arial,sans-serif;}
+.box-code li{ margin-left:20px; color:#999; clear:both; padding:3px 0;}
+.box-code li.first{ margin:0; padding:0;}
+.box-code em{ color:#06C; width:133px; display:inline-block;}
+.box-code span, .s-watch{ display:block; float:left; background:#FCFCFC; padding:3px 5px; margin:7px 0; margin:3px 0\9; border:2px solid #F2F2F2; width:400px; color:#444; line-height:21px;}
+.box-code input{ border:1px solid #aaa; height:17px; line-height:17px; margin:0 5px; padding-left:1px; padding-left:2px\9; vertical-align:baseline;font-family:monaco,verdana,Helvetica,Tahoma,Arial,sans-serif;}
+
+.box-code textarea{ margin-top:5px; border:1px solid #aaa; font-family:monaco,verdana,Helvetica,Tahoma,Arial,sans-serif; width:404px; overflow:auto; padding:3px;}
+
+.text-list{ line-height:25px; margin-bottom:10px; color:#444; padding:0 15px;}
+
+.text-list dt{ font-weight:bold; margin-left:-15px; color:#090;}
+.text-list em{ color:#06C;}
+
+.s-watch{ width:480px; line-height:21px; margin-bottom:10px; margin-top:0;}
+.s-watch em{ color:#06C; font:bold 12px Tahoma; padding-left:5px; padding-right:10px; border-right:1px solid #CDCDCD; margin-right:10px;}
+.bar-btn{ padding:0 20px 5px 0; overflow:hidden; zoom:1;}
+.copyright{ border:none; background:none; color:#999; padding-top:0;}
+.copyright em{ font-weight:bold; color:#090; padding-right:5px;}
+.copyright a{ color:#999;}
+
+
+
+
+.test-search{}
+.test-search .input-wrap{ float:left; _margin-right:-3px; cursor:text;
+	border:1px solid #CDCDCD; border-right:none; border-top-color:#B5B5B5;
+	background:#fff;
+	width:400px;
+	height:30px;
+}
+.test-search .input{ border:none;
+	width:395px;
+	height:18px;	/*保证FF光标高度固定*/
+	margin-top:4px;
+	margin-top:2px\9;	/*IE下纯中文会偏上2px，无解！*/
+	font:16px arial,"宋体";	
+	padding-left:5px;	/*保证鼠标点击框前面能获焦*/
+}
+.test-search .input:focus{ outline:none;}
+.test-search .btn{ width:93px; height:33px; border:none; cursor:pointer; background:url(../img/bg.png) 0 -98px no-repeat;}
+.test-search .shadow{ display:block; font-size:0;
+	border-top:1px solid #ECECEC;
+	border-bottom:1px solid #F9F9F9;
+	width:400px;
+}
+
+.test-search .input-wrap_hover {
+	border-color:#A3A3A3;
+}
+.test-search .input-wrap_hover .shadow{
+	border-top-color:#E7E7E7;
+	border-bottom-color:#F7F7F7;
+}
+
+.test-search .btn_hover{
+	background-position:0 -132px;
+}
+
+.test-search .btn_click{
+	background-position:0 -166px;
+}
+
+
+
+.test-search .input-wrap_focus{
+	border:1px solid #659F46;
+	border-right:none;
+}
+
+.test-search .input-wrap_focus .shadow{
+	border-top-color:#D7E6CE;
+	border-bottom-color:#F2F7EF;
+}

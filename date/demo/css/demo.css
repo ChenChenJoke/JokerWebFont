@@ -1,0 +1,494 @@
+@font-face {
+    font-family: 'clock';
+    src: url('../font/clock.eot');
+    src: url('../font/clock.eot?#iefix') format('embedded-opentype'),
+         url('../font/clock.woff') format('woff'),
+         url('../font/clock.ttf') format('truetype');
+     src: url("../font/clock.otf") format('OpenType');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html{ background: #fff;}
+body{
+    font-family: "HelveticaNeue", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1{ text-align: center; font-size: 400%; margin-top: 30px; font-weight: bold;}
+h1 sup{ font-size: 30%; padding: 0 5px; color: #666; font-weight: normal;}
+
+.l-wrap{
+
+}
+
+.clock {
+    font-size: 100px;
+    font-style: normal;
+    color: #333;
+    -moz-font-feature-settings: "liga=1, dlig=1";
+    -ms-font-feature-settings: "liga=1, dlig=1";
+    -ms-font-feature-settings: "liga", "dlig";
+    -webkit-font-feature-settings: "liga", "dlig";
+    -o-font-feature-settings: "liga", "dlig";
+    font-feature-settings: "liga", "dlig";
+    font-variant-ligatures: common-ligatures;
+    text-rendering: optimizeLegibility;
+    font-family: clock, sans-serif;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.timezone {
+    height: 200px; display: table; position: relative; width: 100%;
+
+    margin-bottom: 20px;
+}
+
+.timezone li{ display: table-cell;
+    position: relative; height: 200px; width: 10.5%;
+}
+
+.timezone p{ position: absolute; bottom: -20px; 
+    text-align: center; width: 100px;
+}
+
+.timezone .clock{ position: absolute; bottom: 0;}
+
+.timezone li.cur { width: 15.5%;}
+.timezone .cur .clock{
+    color: #000;
+    font-size: 150px;
+}
+.timezone .cur p{ width: 150px;}
+
+.h-date{
+    font-size: 13px;
+    text-align: left;
+    overflow: hidden;
+    padding-left: 15px;
+    padding-top: 10px;
+    line-height: 1.6;
+}
+
+.h-date li{
+    
+}
+.filp-wrap{
+    margin-top: 50px;
+    margin-left: 200px;
+    text-align: center;
+}
+
+.flip-space{
+    line-height: 90px;
+    font-size: 80px;
+    float: left;
+    /*text-shadow: 0 2px 5px rgba(0, 0, 0, .5);*/
+}
+
+
+.flip {
+    position: relative;
+    float: left;
+    margin: 5px;
+    width: 60px;
+    height: 90px;
+    font-size: 80px;
+    font-weight: bold;
+    line-height: 90px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .4);
+}
+
+.flip li {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial;
+}
+
+/*.flip li:first-child {
+    z-index: 2;
+}*/
+
+.flip li a {
+    display: block;
+    height: 100%;
+    perspective: 200px;
+}
+
+.flip li a div {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+}
+
+.flip li a div .shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.flip li a div.up {
+    transform-origin: 50% 100%;
+    -webkit-transform-origin: 50% 100%;
+    -moz-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    top: 0;
+}
+
+.flip li a div.up:after {
+    content: "";
+    position:absolute;
+    top:44px;
+    left:0;
+    z-index: 5;
+    width: 100%;
+    height: 3px;
+    background-color: rgba(0,0,0,.4);
+}
+
+.flip li a div.down {
+    transform-origin: 50% 0%;
+    -webkit-transform-origin: 50% 0%;
+    -moz-transform-origin: 50% 0%;
+    -ms-transform-origin: 50% 0%;
+    bottom: 0;
+}
+
+.flip li a div div.inn {
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 200%;
+    color: #ccc;
+    text-shadow: 0 1px 2px #000;
+    text-align: center;
+    background-color: #333;
+    border-radius: 6px;
+}
+
+.flip li a div.up div.inn {
+    top: 0;
+
+}
+
+.flip li a div.down div.inn {
+    bottom: 0;
+}
+
+/* PLAY */
+
+body.play ul li.before {
+    z-index: 3;
+}
+
+body.play ul li.active {
+    animation: asd .5s .5s linear both;
+    -webkit-animation: asd .5s .5s linear both;
+    -moz-animation: asd .5s .5s linear both;
+    -ms-animation: asd .5s .5s linear both;
+    -ms-animation: asd .5s .5s linear both;
+    z-index: 2;
+}
+
+@keyframes asd {
+    0% {
+        z-index: 2;
+    }
+    5% {
+        z-index: 4;
+    }
+    100% {
+        z-index: 4;
+    }
+}
+
+@-webkit-keyframes asd {
+    0% {
+        z-index: 2;
+    }
+    5% {
+        z-index: 4;
+    }
+    100% {
+        z-index: 4;
+    }
+}
+@-moz-keyframes asd {
+    0% {
+        z-index: 2;
+    }
+    5% {
+        z-index: 4;
+    }
+    100% {
+        z-index: 4;
+    }
+}
+
+
+
+body.play ul li.active .down {
+    z-index: 2;
+    animation: turn .5s .5s linear both;
+    -webkit-animation: turn .5s .5s linear both;
+    -moz-animation: turn .5s .5s linear both;
+    -ms-animation: turn .5s .5s linear both;
+    -ms-animation: turn .5s .5s linear both;
+}
+
+@keyframes turn {
+    0% {
+        transform: rotateX(90deg);
+        -webkit-transform: rotateX(90deg);
+        -moz-transform: rotateX(90deg);
+        -ms-transform: rotateX(90deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+        -webkit-transform: rotateX(0deg);
+        -moz-transform: rotateX(0deg);
+        -ms-transform: rotateX(0deg);
+    }
+}
+@-webkit-keyframes turn {
+    0% {
+        transform: rotateX(90deg);
+        -webkit-transform: rotateX(90deg);
+        -moz-transform: rotateX(90deg);
+        -ms-transform: rotateX(90deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+        -webkit-transform: rotateX(0deg);
+        -moz-transform: rotateX(0deg);
+        -ms-transform: rotateX(0deg);
+    }
+}
+@-moz-keyframes turn {
+    0% {
+        transform: rotateX(90deg);
+        -webkit-transform: rotateX(90deg);
+        -moz-transform: rotateX(90deg);
+        -ms-transform: rotateX(90deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+        -webkit-transform: rotateX(0deg);
+        -moz-transform: rotateX(0deg);
+        -ms-transform: rotateX(0deg);
+    }
+}
+
+body.play ul li.before .up {
+    z-index: 2;
+    animation: turn2 .5s linear both;
+    -webkit-animation: turn2 .5s linear both;
+    -moz-animation: turn2 .5s linear both;
+    -ms-animation: turn2 .5s linear both;
+    -ms-animation: turn2 .5s linear both;
+}
+
+@keyframes turn2 {
+    0% {
+        transform: rotateX(0deg);
+        -webkit-transform: rotateX(0deg);
+        -moz-transform: rotateX(0deg);
+        -ms-transform: rotateX(0deg);
+    }
+    100% {
+        transform: rotateX(-90deg);
+        -webkit-transform: rotateX(-90deg);
+        -moz-transform: rotateX(-90deg);
+        -ms-transform: rotateX(-90deg);
+    }
+}
+@-webkit-keyframes turn2 {
+    0% {
+        transform: rotateX(0deg);
+        -webkit-transform: rotateX(0deg);
+        -moz-transform: rotateX(0deg);
+        -ms-transform: rotateX(0deg);
+    }
+    100% {
+        transform: rotateX(-90deg);
+        -webkit-transform: rotateX(-90deg);
+        -moz-transform: rotateX(-90deg);
+        -ms-transform: rotateX(-90deg);
+    }
+}
+@-moz-keyframes turn2 {
+    0% {
+        transform: rotateX(0deg);
+        -webkit-transform: rotateX(0deg);
+        -moz-transform: rotateX(0deg);
+        -ms-transform: rotateX(0deg);
+    }
+    100% {
+        transform: rotateX(-90deg);
+        -webkit-transform: rotateX(-90deg);
+        -moz-transform: rotateX(-90deg);
+        -ms-transform: rotateX(-90deg);
+    }
+}
+
+/* SHADOW */
+
+body.play ul li.before .up .shadow {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, .1)), color-stop(100%, rgba(0, 0, 0, 1)));
+    background: linear-gradient(top, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 100%);
+    background: -o-linear-gradient(top, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 100%);
+    animation: show .5s linear both;
+    -webkit-animation: show .5s linear both;
+    -moz-animation: show .5s linear both;
+    -ms-animation: show .5s linear both;
+    -ms-animation: show .5s linear both;
+}
+
+body.play ul li.active .up .shadow {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, .1)), color-stop(100%, rgba(0, 0, 0, 1)));
+    background: linear-gradient(top, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 100%);
+    background: -o-linear-gradient(top, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 100%);
+    animation: hide .5s .3s linear both;
+    -webkit-animation: hide .5s .3s linear both;
+    -moz-animation: hide .5s .3s linear both;
+    -ms-animation: hide .5s .3s linear both;
+    -ms-animation: hide .5s .3s linear both;
+}
+
+/*DOWN*/
+
+body.play ul li.before .down .shadow {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 1)), color-stop(100%, rgba(0, 0, 0, .1)));
+    background: linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1) 100%);
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1) 100%);
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1) 100%);
+    animation: show .5s linear both;
+    -webkit-animation: show .5s linear both;
+    -moz-animation: show .5s linear both;
+    -ms-animation: show .5s linear both;
+    -ms-animation: show .5s linear both;
+}
+
+body.play ul li.active .down .shadow {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 1)), color-stop(100%, rgba(0, 0, 0, .1)));
+    background: linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1) 100%);
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1) 100%);
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1) 100%);
+    animation: hide .5s .3s linear both;
+    -webkit-animation: hide .5s .3s linear both;
+    -moz-animation: hide .5s .3s linear both;
+    -ms-animation: hide .5s .3s linear both;
+    -ms-animation: hide .5s .3s linear both;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes hide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@-webkit-keyframes hide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@-moz-keyframes hide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.countdown{
+    margin-top: 100px;
+    margin-left: 200px;
+}
+
+.countdown .flip-space{
+    /*line-height: 90px;*/
+    font-size: 13px;
+    float: left;
+    color: #999;
+    font-weight: bold;
+    font-family: Tahoma;
+    padding: 0 3px;
+}
+
+
+.countdown .flip {
+    margin: 3px;
+    width: 30px;
+    height: 45px;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 45px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+}
+
+body.non-opentype .timezone{
+    height: 100px;
+}
+
+body.non-opentype .timezone li{
+    text-align: left;
+    height: 30px;
+}
+body.non-opentype .timezone i{
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Tahoma, sans-serif;
+    margin-left: 10px;
+}
+
+body.non-opentype .timezone .cur i{
+    font-size: 30px;
+}

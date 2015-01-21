@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/css-ui.css" />
+    <style>
+    .l-wrap {
+        width: 960px;
+        margin: 0 auto;
+    }
+    .inner {
+        position: absolute;
+        width: 100px;
+        height: 200px;
+        background-color: #f90;
+    }
+    .inner1 {
+        left: 100px;
+        top: 40px;
+    }
+    .inner2 {
+        left: 300px;
+        top: 60px;
+    }
+    .inner3 {
+        left: 500px;
+        top: 80px;
+    }
+    .inner4 {
+        left: 700px;
+        top: 100px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="inner inner1" id="demo1">inner1</div>
+        <div class="inner inner2" id="demo2">inner2</div>
+        <div class="inner inner3" id="demo3">inner3</div>
+        <div class="inner inner4" id="demo4">inner4</div>
+    </div>
+</body>
+
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/helper.js"></script>
+<script src="js/bubble.js"></script>
+<script type="text/javascript">
+var test1 = $("#demo1").bubble({
+    'wrapOpt': {
+        'modId': 'test01',
+        'content': 'test01test01test01test01'
+    }
+});
+
+var test2 = $("#demo2").bubble({
+    'wrapOpt': {
+        'modId': 'test02',
+        'content': 'test02test02test02test02test02',
+        'direc': 'b',
+        'before': '<p style="color: #f90;">before wrapOpt.content</p>',
+        'after': '<p style="color: gray;">after wrapOpt.content</p>'
+    },
+    'moreOpt': {
+        'direc': 'l',
+        'microDirec': 'aa',
+        'url': 'http://www.baidu.com',
+        'content': ''
+    },
+    'btnOpt': {
+        'direc': 'r',
+        'content': 'Click me!'
+    }
+});
+
+var test3 = $("#demo3").bubble({
+    'wrapOpt': {
+        'modId': 'test03',
+        'content': 'test03test03test03test03test03',
+        'direc': 'l'
+    },
+    'moreOpt': {
+        'direc': 'r',
+        'microDirec': 'ah',
+        'url': 'http://www.baidu.com',
+        'content': ''
+    },
+    'pos': {
+        'left': 20,
+        'top': -50
+    }
+});
+
+var test4 = $("#demo4").bubble({
+    'wrapOpt': {
+        'modId': 'test04',
+        'content': 'test04',
+        'direc': 'l'
+    },
+    'btnOpt': {
+        'direc': 'r',
+        'content': 'Click me!'
+    },
+    'pos': {
+        'left': 100,
+        'top': 0
+    },
+    'callback': {
+        'ui-bubble_close': function(wrap, e) {
+            alert("close");
+            wrap.hide();
+        },
+        'ui-bubble_more': function() {
+            alert("more")
+        },
+        'ui-btn': function() {
+            alert("btn")
+        }
+    }
+});
+
+test1.show();
+test2.show();
+test3.show();
+test4.show();
+
+setInterval(function() {
+    $("#demo1").offset({
+        left: 100 + (Math.random()) * 100,
+        top: 40 + (Math.random()) * 10
+    });
+    $("#demo2").offset({
+        left: 400 + (Math.random()) * 100,
+        top: 80 + (Math.random()) * 10
+    });
+    $("#demo3").offset({
+        left: 700 + (Math.random()) * 100,
+        top: 120 + (Math.random()) * 10
+    });
+    $("#demo4").offset({
+        left: 1000 + (Math.random()) * 100,
+        top: 160 + (Math.random()) * 10
+    });
+}, 1000);
+</script>
+
+</html>
