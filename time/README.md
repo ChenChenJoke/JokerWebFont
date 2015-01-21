@@ -6,7 +6,7 @@
 
 
 大家先把下面的的html文档copy下去，写个html文件。
-'''javascript
+'''javascript'''
 <meta charset="utf-8">
 <html>
 <style>
@@ -30,8 +30,8 @@ div {
 
 好了现在我要让两个block交替向右移，一般情况下我们用动画的时候会用到如下方法：
 
-'''javascript
-/*方法一*/
+'''javascript'''
+
 $('#block1').animate({left:'+=100'},function() {
 	$('#block2').animate({left:'+=100'},function() {
 		$('#block1').animate({left:'+=100'},function() {
