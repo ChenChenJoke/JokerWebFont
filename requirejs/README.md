@@ -146,7 +146,7 @@ math.add()与math模块加载不是同步的，浏览器不会发生假死。所
 
 
 
-#####一、为什么要用require.js？#####
+#####十一、为什么要用require.js？#####
 最早的时候，所有Javascript代码都写在一个文件里面，只要加载这一个文件就够了。后来，代码越来越多，一个文件不够了，必须分成多个文件，依次加载。下面的网页代码，相信很多人都见过。
 ```javascript
 　　<script src="1.js"></script>
@@ -162,7 +162,7 @@ require.js的诞生，就是为了解决这两个问题：
 　　
 　　（1）实现js文件的异步加载，避免网页失去响应；
 　　（2）管理模块之间的依赖性，便于代码的编写和维护。
-#####二、require.js的加载#####
+#####十二、require.js的加载#####
 使用require.js的第一步，是先去官方网站下载最新版本。
 下载后，假定把它放在js子目录下面，就可以加载了。
 ```javascript
@@ -178,7 +178,7 @@ async属性表明这个文件需要异步加载，避免网页失去响应。IE�
 　　<script src="js/require.js" data-main="js/main"></script>
 ```
 data-main属性的作用是，指定网页程序的主模块。在上例中，就是js目录下面的main.js，这个文件会第一个被require.js加载。由于require.js默认的文件后缀名是js，所以可以把main.js简写成main。
-#####三、主模块的写法#####
+#####十三、主模块的写法#####
 上一节的main.js，我把它称为"主模块"，意思是整个网页的入口代码。它有点像C语言的main()函数，所有代码都从这儿开始运行。
 下面就来看，怎么写main.js。
 如果我们的代码不依赖任何其他模块，那么可以直接写入javascript代码。
@@ -203,7 +203,7 @@ require()异步加载moduleA，moduleB和moduleC，浏览器不会失去响应�
 　　});
 ```
 require.js会先加载jQuery、underscore和backbone，然后再运行回调函数。主模块的代码就写在回调函数中。
-#####四、模块的加载#####
+#####十四、模块的加载#####
 上一节最后的示例中，主模块的依赖模块是['jquery', 'underscore', 'backbone']。默认情况下，require.js假定这三个模块与main.js在同一个目录，文件名分别为jquery.js，underscore.js和backbone.js，然后自动加载。
 使用require.config()方法，我们可以对模块的加载行为进行自定义。require.config()就写在主模块（main.js）的头部。参数就是一个对象，这个对象的paths属性指定各个模块的加载路径。
 ```javascript
@@ -245,7 +245,7 @@ require.js会先加载jQuery、underscore和backbone，然后再运行回调函�
 　　});
 ```
 require.js要求，每个模块是一个单独的js文件。这样的话，如果加载多个模块，就会发出多次HTTP请求，会影响网页的加载速度。因此，require.js提供了一个优化工具，当模块部署完毕以后，可以用这个工具将多个模块合并在一个文件中，减少HTTP请求数。
-#####五、AMD模块的写法#####
+#####十五、AMD模块的写法#####
 require.js加载的模块，采用AMD规范。也就是说，模块必须按照AMD的规定来写。
 具体来说，就是模块必须采用特定的define()函数来定义。如果一个模块不依赖其他模块，那么可以直接定义在define()函数之中。
 假定现在有一个math.js文件，它定义了一个math模块。那么，math.js就要这样写：
@@ -279,7 +279,7 @@ require.js加载的模块，采用AMD规范。也就是说，模块必须按照A
 　　});
 ```
 当require()函数加载上面这个模块的时候，就会先加载myLib.js文件。
-#####六、加载非规范的模块#####
+#####十六、加载非规范的模块#####
 理论上，require.js加载的模块，必须是按照AMD规范、用define()函数定义的模块。但是实际上，虽然已经有一部分流行的函数库（比如jQuery）符合AMD规范，更多的库并不符合。那么，require.js是否能够加载非规范的模块呢？
 回答是可以的。
 这样的模块在用require()加载之前，要先用require.config()方法，定义它们的一些特征。
@@ -308,7 +308,7 @@ require.config()接受一个配置对象，这个对象除了有前面说过的p
 　　　　}
 　　}
 ```
-#####七、require.js插件#####
+#####十七、require.js插件#####
 require.js还提供一系列插件，实现一些特定的功能。
 domready插件，可以让回调函数在页面DOM结构加载完成后再运行。
 ```javascript
@@ -331,3 +331,8 @@ text和image插件，则是允许require.js加载文本和图片文件。
 ```
 类似的插件还有json和mdown，用于加载json文件和markdown文件。
 
+
+附上阮老师的博客http://www.ruanyifeng.com/home.html
+
+以及Ben Cherry的著名文章《JavaScript Module Pattern: In-Depth》 
+http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html
