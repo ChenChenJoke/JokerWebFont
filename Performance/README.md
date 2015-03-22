@@ -40,10 +40,11 @@ loadTime = timing.loadEventEnd - timing.navigationStart // 从开始至load总�
 
 #####performanceNavigation.redirectCount
 
-######一个只读属性,返回当前页面是几次重定向才过来的.但是这个接口有同源策略限制,即仅能检测同源的重定向.######
+一个只读属性,返回当前页面是几次重定向才过来的.但是这个接口有同源策略限制,即仅能检测同源的重定向.######
 
 bugs:
-　　**1. IE9,当一个同源的页面a连接到地址b(是否于a,c同源都如此),后被重定向到同源页面c时.navigation.redirectCount居然会是1.而不是0,此bug已被IE10 PP2修复.**
+
+     1. IE9,当一个同源的页面a连接到地址b(是否于a,c同源都如此),后被重定向到同源页面c时.navigation.redirectCount居然会是1.而不是0,此bug已被IE10 PP2修复.**
 
 ###performanceTiming(performance.timing)对象的成员:
 
@@ -51,7 +52,7 @@ bugs:
 
  
 
-.navigationStart 
+####.navigationStart 
 
 浏览器完成卸载前一个文档的时间(也就是准备加载新页面的那个起始时间).如果没有前一个文档，那么就返回 timing.fetchStart的值.
 
@@ -67,7 +68,7 @@ bugs:
 
  
 
-.unloadEventStart
+####.unloadEventStart
 
 如果前一个文档，和当前文档同源,返回前一个文档发生unload事件前的时间.如果没有前一个文档，或不同源,则返回0.
 
@@ -77,7 +78,7 @@ bugs:
 
  
 
-.unloadEventEnd
+####.unloadEventEnd
 
 如果前一个文档和当前文档同源.返回前一个文档发生unload事件的时间. 如果没有前一个文档，或不同源,则返回0.
 
@@ -93,7 +94,7 @@ bugs:
 
  
 
-.redirectStart
+####.redirectStart
 
 如果,发生了HTTP重定向,或者类似的事情.并且,从导航开始,中间的每次重定向，都和当前文档同域的话,就返回开始重定向的,timing.fetchStart的值.其他情况，则返回0.
 
@@ -105,7 +106,7 @@ bugs:
 
  
 
-.redirectEnd
+####.redirectEnd
 
 如果,发生了HTTP重定向,或者类似的事情.并且,从导航开始,中间的每次重定向，都和当前文档同域的话,就返回最后一次重定向，接收到最后一个字节数据后的那个时间.其他情况则返回0.
 
@@ -117,7 +118,7 @@ bugs:
 
  
 
-.fetchStart
+####.fetchStart
 
 如果一个新的资源(这里是指当前文档)获取被发起,或类似的事情发生,则 fetchStart必须返回用户代理开始检查其相关缓存的那个时间,其他情况则返回开始获取该资源的时间.
 
@@ -127,7 +128,7 @@ bugs:
 
  
 
-.domainLookupStart 
+####.domainLookupStart 
 
 返回用户代理对当前文档所属域进行DNS查询开始的时间. 如果此请求没有DNS查询过程,如长连接，资源cache,甚至是本地资源等. 那么就返回 fetchStart的值.
 
@@ -139,7 +140,7 @@ bugs:
 
  
 
-.domainLookupEnd
+####.domainLookupEnd
 
 返回用户代理对结束对当前文档所属域进行DNS查询的时间.如果此请求没有DNS查询过程,如长连接，资源cache,甚至是本地资源等. 那么就返回 fetchStart的值.
 
@@ -151,7 +152,7 @@ bugs:
 
  
 
-.connectStart
+####.connectStart
 
 返回用户代理向服务器服务器请求文档，开始建立连接的那个时间,如果此连接是一个长连接,又或者直接从缓存中获取资源（即没有与服务器建立连接）.则返回domainLookupEnd的值.
 
@@ -163,7 +164,7 @@ bugs:
 
  
 
-.connectEnd
+####.connectEnd
 
 返回用户代理向服务器服务器请求文档，建立连接成功后(注意，不是断开连接的时间.)的那个时间.如果此连接是一个长连接，又或直接从缓存中获取资源 （即没有与服务器建立连接）,则返回domainLookupEnd的值.
 
@@ -181,7 +182,7 @@ bugs:
 
  
 
-.secureConnectionStart
+####.secureConnectionStart
 
 可选特性.用户代理如果没有对应的东东,就要把这个设置为undefined.如果有这个东东,并且是HTTPS协议,那么就要返回开始SSL握手的那个时间. 如果不是HTTPS, 那么就返回0.
 
@@ -193,7 +194,7 @@ bugs:
 
  
 
-.requestStart
+####.requestStart
 
 返回从服务器、缓存、本地资源等,开始请求文档的时间. 
 
@@ -217,7 +218,7 @@ bugs:
 
  
 
-.responseStart
+####.responseStart
 
 返回用户代理从服务器、缓存、本地资源中，接收到第一个字节数据的时间.
 
@@ -225,7 +226,7 @@ bugs:
 
  
 
-.responseEnd
+####.responseEnd
 
 返回用户代理接收到最后一个字符的时间，和当前连接被关闭的时间中，更早的那个. 同样,文档可能来自服务器、缓存、或本地资源.
 
@@ -255,7 +256,7 @@ bugs :
 
  
 
-.domLoading 
+####.domLoading 
 
 返回用户代理把其文档的 "current document readiness" 设置为 "loading"的时候.
 
@@ -277,7 +278,7 @@ bugs :
 
  
 
-.domInteractive
+####.domInteractive
 
 返回用户代理把其文档的 "current document readiness" 设置为 "interactive"的时候.
 
@@ -294,7 +295,7 @@ bugs :
     按我个人理解，并未解析结束，应该为0. 但是IE似乎对这个东西理解不太一样. 其他浏览器会是0. 但是. IE9-IE10 PP2,则会比较有趣.即使是分段输出,我取到的值.也和onload以后去到的,domInteractive的值是一致的.  导致这一神奇现象的原因是,正式IE系的bug所导. 该时间是错误的引用了,DOM解析完成第一个数据块的时间.而不是整个文档的. 但是纠结起来就要挖掘更深层次的原因了. 因为草案只说该值体现的是,用户代理把"current document readiness" 设置为 "interactive"的时间.如果IE系处理分段输出的html文档，向来都是这样做的。那么该值与其他浏览器的差异。也是可以理解的. 
  
 
-.domContentLoadedEventStart
+####.domContentLoadedEventStart
 
 返回文档发生 DOMContentLoaded事件的时间.
 
@@ -306,7 +307,7 @@ DOMContentLoad和 DOMInteractive 之间差了两个步骤. 其中之一是, 所�
 
  
 
-.domContentLoadedEventEnd
+####.domContentLoadedEventEnd
 
 文档的DOMContentLoaded 事件的结束时间.
 
@@ -317,19 +318,19 @@ DOMContentLoad和 DOMInteractive 之间差了两个步骤. 其中之一是, 所�
 
  
 
-.domComplete
+####.domComplete
 
 返回用户代理把其文档的 "current document readiness" 设置为 "complete"的时候.
 
 
 
 
-PS:如果 current document readiness 的某个状态被多次触发，那么对应的  domLoading, domInteractive, domContentLoadedEventStart, domContentLoadedEventEnd and domComplete这些对应的API返回的时间,就应该是这个状态第一次触发的时间.
+***PS:如果 current document readiness 的某个状态被多次触发，那么对应的  domLoading, domInteractive, domContentLoadedEventStart, domContentLoadedEventEnd and domComplete这些对应的API返回的时间,就应该是这个状态第一次触发的时间.***
 
  
 
  
 
-.loadEventStart
+####.loadEventStart
 
 文档触发load事件的时间. 如果load事件没有触发,那么该接口就返回0.
