@@ -148,7 +148,6 @@ bugs:
 
      1.参考domainLookupStart的bug. End具备相同的问题.
 
-     
 
  
 
@@ -204,11 +203,11 @@ bugs:
 
  
 
-     performance.timing 并不包含一个 单表请求结束的"requestEnd"接口. 原因有两点:
+**performance.timing 并不包含一个 单表请求结束的"requestEnd"接口. 原因有两点:**
 
-          1. 用户代理所能确定的请求的结束,并不能代表正确的网络栓书中的结束时间. 所以设计这个属性并没什么用处.
+     1. 用户代理所能确定的请求的结束,并不能代表正确的网络栓书中的结束时间. 所以设计这个属性并没什么用处.
 
-          2. 一些用户代理，如果要封装一个代表HTTP层面的，请求结束时间的接口,成本会非常高昂.
+     2. 一些用户代理，如果要封装一个代表HTTP层面的，请求结束时间的接口,成本会非常高昂.
 
 bugs: 
      1. Firefox7,直接走本地缓存时,.requestStart的值将为0. (Firefox8已修复此问题)
@@ -249,8 +248,8 @@ bugs :
  
 
 实现差异:(由于草案中，并未提及,当文档被分段输出后.在中间文档数据，接受过程中,responseEnd应如何处理,导致浏览器实现存在差异.)
-     IE9 - IE10 PP2 , Firefox8-Firefox10,在不走存在Response阶段（非走cache的情况下.）.以接收第一个chunked包结束的时间作为.responseEnd的时间.(这将导致后续的一系列问题.)
-     Chrome17-,Firefox7,则在分段数据的接受过程中，不会更新.responseEnd的时间,其值,始终为0.
+* IE9 - IE10 PP2 , Firefox8-Firefox10,在不走存在Response阶段（非走cache的情况下.）.以接收第一个chunked包结束的时间作为.responseEnd的时间.(这将导致后续的一系列问题.)*
+*Chrome17-,Firefox7,则在分段数据的接受过程中，不会更新.responseEnd的时间,其值,始终为0.*
 
  
 
@@ -267,6 +266,7 @@ bugs :
  
 
 bugs : 
+
      1. IE9. 在分段输出文档的情况下，该值总是要晚于最终responseEnd的值. 基于responseEnd的IE实现的bug.这也合情合理.
  
 
@@ -289,6 +289,7 @@ bugs :
  
 
 bugs : 
+
      1. IE9,IE10 PP2 . 在分段输出文档的情况下，该值并不是全部文档解析完成后的时间,而是第一个数据块被解析完成的时间,基于responseEnd的IE实现的bug.经过向后推定这也合情合理.
  
 实现差异:(由于草案中，并未提及,文档解析并未结束时,其默认值的应该是多少.导致浏览器实现有差异.)
