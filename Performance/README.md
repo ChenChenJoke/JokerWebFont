@@ -23,45 +23,27 @@ domReadyTime = timing.domComplete - timing.domInteractive; // 解释dom树耗时
 loadTime = timing.loadEventEnd - timing.navigationStart // 从开始至load总耗时:
 
 ```
-performanceNavigation(performance.navigation)对象的成员
 
- 
-
-performanceNavigation.type 
-
+###performanceNavigation(performance.navigation)对象的成员
+##### performanceNavigation.type 
 返回值应该是0,1,2 中的一个.分别对应三个枚举值:
 
-0 : TYPE_NAVIGATE  (用户通过常规导航方式访问页面,比如点一个链接，或者一般的get方式.)
+0. : TYPE_NAVIGATE  (用户通过常规导航方式访问页面,比如点一个链接，或者一般的get方式.)
 
-1 : TYPE_RELOAD  (用户通过刷新,包括JS调用刷新接口等方式访问页面)
+1. : TYPE_RELOAD  (用户通过刷新,包括JS调用刷新接口等方式访问页面)
 
-2 : TYPE_BACK_FORWARD (用户通过后退按钮访问本页面)
+2. : TYPE_BACK_FORWARD (用户通过后退按钮访问本页面)
 
- 
-
-ps:草案中其实还有 3 : TYPE_RESERVED (保留,其他非前三种方式访问.)
+3. ps:草案中其实还有  TYPE_RESERVED (保留,其他非前三种方式访问.)
 
  
 
-performanceNavigation.redirectCount
+#####performanceNavigation.redirectCount
 
 一个只读属性,返回当前页面是几次重定向才过来的.但是这个接口有同源策略限制,即仅能检测同源的重定向.
 
 bugs:
-
-　　1. IE9,当一个同源的页面a连接到 地址b(是否于a,c同源都如此),后被重定向到同源页面c时.navigation.redirectCount居然会是1.而不是0,此bug已被IE10 PP2修复.
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
+　　1. IE9,当一个同源的页面a连接到地址b(是否于a,c同源都如此),后被重定向到同源页面c时.navigation.redirectCount居然会是1.而不是0,此bug已被IE10 PP2修复.
 
 performanceTiming(performance.timing)对象的成员:
 
