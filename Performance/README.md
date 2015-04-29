@@ -335,3 +335,9 @@ DOMContentLoad和 DOMInteractive 之间差了两个步骤. 其中之一是, 所�
 ####.loadEventStart
 
 文档触发load事件的时间. 如果load事件没有触发,那么该接口就返回0.
+
+缓存：
+1、浏览器缓存
+2、操作系统缓存
+3、路由器缓存
+4、运营商缓存
