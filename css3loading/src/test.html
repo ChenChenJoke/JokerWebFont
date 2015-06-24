@@ -1,0 +1,197 @@
+<style type="text/css">
+/* Inspirated from  http://www.alessioatzeni.com/wp-content/tutorials/html-css/CSS3-loading-animation-loop/index.html */
+.ouro {
+    position: relative;
+    display:inline-block;
+    height: 46px;
+    width: 46px;
+    margin: 1em;
+    border-radius: 50%;  
+    background: none repeat scroll 0 0 #DDDDDD;
+    overflow:hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,.1) inset, 0 0 25px rgba(0,0,255,0.075);
+}
+
+.ouro:after {
+    content: "";
+    position: absolute;
+    top: 9px; left: 9px;
+    display: block;
+    height: 28px; width: 28px;
+    background: none repeat scroll 0 0 #F2F2F2;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+.ouro > span {
+    position: absolute;
+    height: 100%; width: 50%;
+    overflow: hidden;
+}
+.left  { left:0   }
+.right { left:50% }
+
+.anim {
+    position: absolute;
+    left: 100%; top: 0;
+    height: 100%; width: 100%;
+    border-radius: 999px;
+    background: none repeat scroll 0 0 #508EC3;
+    opacity: 0.8;
+    -webkit-animation: ui-spinner-rotate-left 3s infinite;
+    animation: ui-spinner-rotate-left 3s infinite;
+    -webkit-transform-origin: 0 50% 0;
+    transform-origin: 0 50% 0;
+}
+.left .anim {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+.right .anim {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    left: -100%;
+    -webkit-transform-origin: 100% 50% 0;
+    transform-origin: 100% 50% 0;
+}
+
+/* v2 */
+.ouro2 .anim {
+   -webkit-animation-delay:0;
+   animation-delay:0;
+}
+.ouro2 .right .anim{
+   -webkit-animation-delay: 1.5s;
+   animation-delay: 1.5s;
+}
+
+/* v3 */
+.ouro3 .anim {
+   -webkit-animation-delay: 0s;
+   -webkit-animation-duration:3s;
+   -webkit-animation-timing-function: linear;
+   animation-delay: 0s;
+   animation-duration:3s;
+   animation-timing-function: linear;
+}
+.ouro3 .right .anim{
+   -webkit-animation-name: ui-spinner-rotate-right;
+   -webkit-animation-delay:0;
+   -webkit-animation-delay: 1.5s;
+   animation-name: ui-spinner-rotate-right;
+   animation-delay:0;
+   animation-delay: 1.5s;
+}
+
+/* round variation */
+.round .ouro:after {display:none }
+
+/* double variation */
+.double .ouro:after {
+  height: 13px; width: 13px;
+  left: 7px; top: 7px;
+  border: 10px solid #ddd;
+  background: transparent;
+  box-shadow: none;
+}
+
+@keyframes ui-spinner-rotate-right{
+  0%{transform:rotate(0deg)}
+  25%{transform:rotate(180deg)}
+  50%{transform:rotate(180deg)}
+  75%{transform:rotate(360deg)}
+  100%{transform:rotate(360deg)}
+}
+@keyframes ui-spinner-rotate-left{
+  0%{transform:rotate(0deg)}
+  25%{transform:rotate(0deg)}
+  50%{transform:rotate(180deg)}
+  75%{transform:rotate(180deg)}
+  100%{transform:rotate(360deg)}
+}
+
+@-webkit-keyframes ui-spinner-rotate-right{
+  0%{-webkit-transform:rotate(0deg)}
+  25%{-webkit-transform:rotate(180deg)}
+  50%{-webkit-transform:rotate(180deg)}
+  75%{-webkit-transform:rotate(360deg)}
+  100%{-webkit-transform:rotate(360deg)}
+}
+@-webkit-keyframes ui-spinner-rotate-left{
+  0%{-webkit-transform:rotate(0deg)}
+  25%{-webkit-transform:rotate(0deg)}
+  50%{-webkit-transform:rotate(180deg)}
+  75%{-webkit-transform:rotate(180deg)}
+  100%{-webkit-transform:rotate(360deg)}
+}
+
+/*
+ * Some bugs with Chrome (Android), Safari and Opera, I'll try to see how  made his code.
+ */
+
+/* presentation styles */
+html {height: 100%}
+body { text-align:center; background: radial-gradient(circle, #fff 0%, #bbb 85%) no-repeat; background: -webkit-radial-gradient(circle, #fff 0%, #bbb 85%) no-repeat; height: 100%; display:table; width:100%}
+.block {display: table-cell; vertical-align:middle}
+h1, a { margin-top: 1em; font-family: "Open Sans Light", "Open Sans", "Segoe UI", Helvetica, Arial; color: #888; font-weight: lighter;}
+.info {margin-top: 25px}
+.info a {font-size: 12px; color: #999}
+.info br + a {text-decoration:none}
+
+
+</style>
+<div class="block">
+  <h1>OuroboroCSS</h1>
+
+<p class="circle">
+  <span class="ouro">
+    <span class="left"><span class="anim"></span></span>
+    <span class="right"><span class="anim"></span></span>
+  </span>
+
+  <span class="ouro ouro2">
+    <span class="left"><span class="anim"></span></span>
+    <span class="right"><span class="anim"></span></span>
+  </span>
+
+  <span class="ouro ouro3">
+    <span class="left"><span class="anim"></span></span>
+    <span class="right"><span class="anim"></span></span>
+  </span>
+</p>
+
+<p class="round">
+  <span class="ouro">
+    <span class="left"><span class="anim"></span></span>
+    <span class="right"><span class="anim"></span></span>
+  </span>
+
+  <span class="ouro ouro2">
+    <span class="left"><span class="anim"></span></span>
+    <span class="right"><span class="anim"></span></span>
+  </span>
+
+  <span class="ouro ouro3">
+    <span class="left"><span class="anim"></span></span>
+    <span class="right"><span class="anim"></span></span>
+  </span>
+</p>
+
+<p class="double">
+  <span class="ouro">
+    <span class="left"><span class="anim"></span></span>
+    <span class="right"><span class="anim"></span></span>
+  </span>
+
+  <span class="ouro ouro2">
+    <span class="left"><span class="anim"></span></span>
+    <span class="right"><span class="anim"></span></span>
+  </span>
+
+  <span class="ouro ouro3">
+    <span class="left"><span class="anim"></span></span>
+    <span class="right"><span class="anim"></span></span>
+  </span>
+</p>
+
+  <p class="info"><a href="http://en.wikipedia.org/wiki/Ouroboros">Why the name OuroboroCSS?</a><br /><a href="http://twitter.com/geoffrey_crofte">by @geoffrey_crofte</a></p>
+</div>
