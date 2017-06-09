@@ -1,3 +1,4 @@
+
 self.onmessage = function(event) { 
   var data = event.data; 
   var ans = fibonacci(data); 
@@ -7,3 +8,4 @@ self.onmessage = function(event) {
 function fibonacci(n) { 
   return n < 2 ? n : arguments.callee(n - 1) + arguments.callee(n - 2); 
 } 
+
