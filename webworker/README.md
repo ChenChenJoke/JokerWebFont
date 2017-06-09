@@ -80,7 +80,56 @@ ps:斐波那契数列如果放入主线程做这件事保证UI卡的死死的，
 
 ![image](https://github.com/ChenChenJoke/JokerWebFont/blob/master/webworker/images/weixin2.png?raw=true)
 
+然后我们点击链接从微信进入站点。
 
+![image](https://github.com/ChenChenJoke/JokerWebFont/blob/master/webworker/images/weixin3.png?raw=true)
+
+不断点击第一个div可以看到第一个div里面不断出现hello world，但是同时第二个div里的也出现了斐波那契数列的第35个数的计算结果。
+
+![image](https://github.com/ChenChenJoke/JokerWebFont/blob/master/webworker/images/weixin4.png?raw=true)
+
+随着时间的推移，在第四个div中斐波那契数列的第40个元素也随之出现。
+
+![image](https://github.com/ChenChenJoke/JokerWebFont/blob/master/webworker/images/weixin5.png?raw=true)
+
+测试手机型号为iphone7 plus 测试微信版本如下：
+
+![image](https://github.com/ChenChenJoke/JokerWebFont/blob/master/webworker/images/weixin5.png?raw=true)
+
+> webworker在微信ios版里表现良好，没有出现异常问题。
+
+###FAQ###
+
+用法：
+```javascript
+1、通过 var worker = new Worker(url) 加载一个 js 文件来创建一个 worker，同时返回一个 worker 实例。
+2、通过 worker.postMessage(data) 方法来向 worker 发送数据。
+3、绑定 worker.onmessage 方法来接收 worker 发送过来的数据。
+4、可以使用 worker.terminate() 来终止一个 worker 的执行。
+5、worker新线程：
+6、绑定 onmessage 方法来接收主线程发送过来的数据。
+7、通过 postMessage(data) 方法来向主线程发送数据。
+8、可以使用 self.close() 来终止一个 worker 的执行。
+9、最小化 的navigator 对象，包括 onLine、appName、appVersion、userAgent 和 platform 属性
+10、setTimeout()、setInterval()、clearTimeout()、clearInterval() 方法
+11、XMLHttpRequest 构造函数
+
+12、任何时候都能中止 Worker。在 worker.js 中，我们可以用 self.close()方法，而在页面中，我们可以用 worker.terminal()方法，这时 error 和 message 事件也不会触发了。
+
+```
+
+问题：
+
+```javascript
+
+1、webworker跟父级不同域
+2、同样有一个全局对象（worker 对象本身，this 和 self 引用的都是 worker 对象本身
+3、Web Worker 中的代码不能访问 DOM
+4、只读的 location 对象
+
+```
+
+> 结论：
 
 
 
