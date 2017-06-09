@@ -154,7 +154,7 @@ chrome下的chrome://inspect/#workers可以进行调试。
 
 ```
 
-###### 最后大家记得去看文档(尤其mozilla基金会的)：######
+###### 最后大家记得去看文档(尤其mozilla基金会的)： ######
 > https://developers.google.com/web/fundamentals/getting-started/primers/service-workers
 > https://www.ibm.com/developerworks/cn/web/1112_sunch_webworker/
 > https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
