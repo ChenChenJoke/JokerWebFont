@@ -78,7 +78,7 @@ ps:斐波那契数列如果放入主线程做这件事保证UI卡的死死的，
 结果如下图：
 
 
-![image](https://github.com/ChenChenJoke/JokerWebFont/webworker/master/webworker2.png)
+![image](https://github.com/ChenChenJoke/JokerWebFont/blob/master/webworker/images/weixin2.png?raw=true)
 
 
 
