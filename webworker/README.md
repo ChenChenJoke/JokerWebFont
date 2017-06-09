@@ -125,11 +125,10 @@ ps:斐波那契数列如果放入主线程做这件事保证UI卡的死死的，
 
 ```javascript
 
-1、webworker跟父级不同域
-2、同样有一个全局对象（worker 对象本身，this 和 self 引用的都是 worker 对象本身
-3、Web Worker 中的代码不能访问 DOM
-4、只读的 location 对象
-5、各个浏览器对Worker的实现不大一致，例如FF里允许worker中创建新的worker,而Chrome中就不行
+1、同样有一个全局对象（worker 对象本身，this 和 self 引用的都是 worker 对象本身
+2、Web Worker 中的代码不能访问 DOM
+3、只读的 location 对象
+4、各个浏览器对Worker的实现不大一致，例如FF里允许worker中创建新的worker,而Chrome中就不行
 
 ```
 
