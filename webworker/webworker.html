@@ -1,0 +1,67 @@
+<div id = "hello" style='width:300px;height:300px;background-color:blue;color:red;font-size: 16px'></div> 
+<div id = "webworker35" style='width:300px;height:300px;background-color:black;color:white;font-size: 16px'></div> 
+<div id = "webworker45" style='width:300px;height:300px;background-color:green;color:yellow;font-size: 16px'></div> 
+
+<script> 
+  document.querySelector('#hello').onclick = function() { 
+    console.log('hello world'); 
+    document.querySelector('#hello').innerHTML += "hello world <br>";
+
+  }; 
+
+
+ 
+  var worker35 = new Worker('webworker.js'); 
+  worker35.postMessage(35); 
+  worker35.onmessage = function(event) { 
+    var data = event.data; 
+    document.querySelector('#webworker35').innerHTML = data;
+    console.log(data);
+  }; 
+ 
+  worker35.onerror = function(event) { 
+  	// filename、lineno 和 message，分别表示错误的文件名、代码行号和完整的错误信息：
+    console.log(event.filename, event.lineno, event.message); 
+  }; 
+
+
+var worker40 = new Worker('webworker.js'); 
+  worker40.postMessage(40); 
+  worker40.onmessage = function(event) { 
+    var data = event.data; 
+    document.querySelector('#webworker45').innerHTML = data;
+    console.log(data);
+  }; 
+ 
+  worker40.onerror = function(event) { 
+  	// filename、lineno 和 message，分别表示错误的文件名、代码行号和完整的错误信息：
+    console.log(event.filename, event.lineno, event.message); 
+  }; 
+
+
+</script> 
+
+<!-- 
+WEB主线程:
+通过 var worker = new Worker(url) 加载一个 js 文件来创建一个 worker，同时返回一个 worker 实例。
+通过 worker.postMessage(data) 方法来向 worker 发送数据。
+绑定 worker.onmessage 方法来接收 worker 发送过来的数据。
+可以使用 worker.terminate() 来终止一个 worker 的执行。
+worker新线程：
+绑定 onmessage 方法来接收主线程发送过来的数据。
+通过 postMessage(data) 方法来向主线程发送数据。
+可以使用 self.close() 来终止一个 worker 的执行。
+ -->
+
+<!-- FAQ
+webworker跟父级不同域
+同样有一个全局对象（worker 对象本身，this 和 self 引用的都是 worker 对象本身
+Web Worker 中的代码不能访问 DOM
+最小化 的navigator 对象，包括 onLine、appName、appVersion、userAgent 和 platform 属性
+只读的 location 对象
+setTimeout()、setInterval()、clearTimeout()、clearInterval() 方法
+XMLHttpRequest 构造函数
+
+任何时候都能中止 Worker。在 worker.js 中，我们可以用 self.close()方法，而在页面中，我们可以用 worker.terminal()方法，这时 error 和 message 事件也不会触发了。
+
+-->
