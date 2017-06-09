@@ -96,7 +96,7 @@ ps:斐波那契数列如果放入主线程做这件事保证UI卡的死死的，
 
 ![image](https://github.com/ChenChenJoke/JokerWebFont/blob/master/webworker/images/weixin5.png?raw=true)
 
-> webworker在微信ios版里表现良好，没有出现异常问题。
+> 结果：webworker在微信ios版里表现良好，没有出现异常问题。
 
 ###FAQ###
 
@@ -115,6 +115,9 @@ ps:斐波那契数列如果放入主线程做这件事保证UI卡的死死的，
 11、XMLHttpRequest 构造函数
 
 12、任何时候都能中止 Worker。在 worker.js 中，我们可以用 self.close()方法，而在页面中，我们可以用 worker.terminal()方法，这时 error 和 message 事件也不会触发了。
+13、可以通过importScripts() 引入其他工具js或者第三方类库(类库不能依赖BOM和DOM)
+
+
 
 ```
 
@@ -126,10 +129,34 @@ ps:斐波那契数列如果放入主线程做这件事保证UI卡的死死的，
 2、同样有一个全局对象（worker 对象本身，this 和 self 引用的都是 worker 对象本身
 3、Web Worker 中的代码不能访问 DOM
 4、只读的 location 对象
+5、各个浏览器对Worker的实现不大一致，例如FF里允许worker中创建新的worker,而Chrome中就不行
 
 ```
 
+调试：
+
+```javascript
+chrome下的chrome://inspect/#workers可以进行调试。
+```
+
 > 结论：
+
+```javascript
+
+1、浏览器支持情况良好，几乎主流浏览器包括移动端都支持
+2、对微信ios版本支持暂无问题，Android后续进行测试
+3、根据他的特性可以做一些延时操作，或者不想阻塞UI线程的操作。
+4、由于Worker可以调用XHR的构造函数，所以可以在Worker里发起异步请求（Worder中不能更新 UI线程也就是dom节点上的内容）
+5、由于Worker跟父级不同域，所以需要保持用户登录状态的异步请求不可用。具体是
+
+```
+
+最后大家记得去看文档(尤其mozilla基金会的)：
+https://developers.google.com/web/fundamentals/getting-started/primers/service-workers
+https://www.ibm.com/developerworks/cn/web/1112_sunch_webworker/
+https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
+
+
 
 
 
