@@ -1,46 +1,19 @@
-# 作为一个前端工程师你了解你的小伙伴么--chrome
+# webworker简介
 
 ------
 
-chrome的常用功能我就不说了，F12,element,network,timeline,resources,aduits,console这些我就默认大家都已经掌握了。
+> 估计很多人还没用过webworker，我作为一个low到家的前端工程师。以下我要介绍一下webworker
+
+###HTML5 中工作线程（Web Worker）简介###
+
+至 2008 年 W3C 制定出第一个 HTML5 草案开始，HTML5 承载了越来越多崭新的特性和功能。它不但强化了 Web 系统或网页的表现性能，而且还增加了对本地数据库等 Web 应用功能的支持。其中，最重要的一个便是对多线程的支持。在 HTML5 中提出了工作线程（Web Worker）的概念，并且规范出 Web Worker 的三大主要特征：能够长时间运行（响应），理想的启动性能以及理想的内存消耗。Web Worker 允许开发人员编写能够长时间运行而不被用户所中断的后台程序，去执行事务或者逻辑，并同时保证页面对用户的及时响应。本文深入 HTML5 多线程规范，讲述多线程实现原理、方法，同时以实例的形式讲解 HTML5 中多线程编程以及应用。
+W3C 中的工作线程规范到目前为止已经定义了出了一系列公共接口，它允许 Web 程序开发人员去创建后台线程在他们的主页面中并发的运行脚本。这将使得线程级别的消息通信成为现实。
 
 
+![image](https://github.com/ChenChenJoke/JokerWebFont/blob/master/webworker/webworker1.png)
 
-> 估计很多人不知道Chrome地址栏功能，我作为一个low到家的前端工程师，必须懂的。以下我要介绍的这些指令在Chrome地址栏输入即可
+随便搭建一个服务器我们上先写两个文件，一个是webworker.html的主文件，另一个是webworker.js需要处理异步任务的处理器。
 
-about:version – 显示当前版本 也可以是chrome-resource://about/
-
-about:plugins – 显示已安装插件
-
-about:histograms – 显示历史记录
-
-chrome://history2 – 浏览历史 History2
-
-about:dns – 显示DNS状态
-
-about:cache, 重定向到 view-cache: 显示缓存页面
-
-view-cache:stats – 缓存状态
-
-about:stats – 显示状态
-
-about:network – 很酷的网络工具
-
-about:internets – 这应该算是一个彩蛋
-
-chrome-resource://new-tab/ – 新标签页
-
-about:memory – 可以查看内存和进程占用。也可以Shift+ESC，点击Statistics for nerds（傻瓜统计信息）
-
-about:flags – Chrome高级设置
-
-
-> 事实上你根本就无需记这些指令，你只需要记住一个万能的就行，那就是chrome://about/
-
-你在Chrome地址栏输入这个，就会出现如下截图，哈哈，万能吧！（还有好多，我只截了一部分哦）
-
-
-![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/bmI7by.png)
 
 
 ### 插件管理,chrome://plugin
