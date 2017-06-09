@@ -96,6 +96,10 @@ ps:斐波那契数列如果放入主线程做这件事保证UI卡的死死的，
 
 ![image](https://github.com/ChenChenJoke/JokerWebFont/blob/master/webworker/images/weixin5.png?raw=true)
 
+各个浏览器对于webworker的支持
+
+![image](https://github.com/ChenChenJoke/JokerWebFont/blob/master/webworker/images/weixin6.png?raw=true)
+
 > 结果：webworker在微信ios版里表现良好，没有出现异常问题。
 
 ###FAQ###
