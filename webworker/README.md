@@ -94,19 +94,19 @@ ps:斐波那契数列如果放入主线程做这件事保证UI卡的死死的，
 
 测试手机型号为iphone7 plus 测试微信版本如下：
 
-![image](https://github.com/ChenChenJoke/JokerWebFont/blob/master/webworker/images/weixin5.png?raw=true)
+![image](https://github.com/ChenChenJoke/JokerWebFont/blob/master/webworker/images/weixin1.png?raw=true)
 
 补充Android下的微信支持情况：
 
-![image](https://github.com/ChenChenJoke/JokerWebFont/blob/master/webworker/images/weixin6.png?raw=true)
+![image](https://github.com/ChenChenJoke/JokerWebFont/blob/master/webworker/images/weixin7.png?raw=true)
 
 微信版本：
 
-![image](https://github.com/ChenChenJoke/JokerWebFont/blob/master/webworker/images/weixin7.png?raw=true)
+![image](https://github.com/ChenChenJoke/JokerWebFont/blob/master/webworker/images/weixin8.png?raw=true)
 
 操作系统
 
-![image](https://github.com/ChenChenJoke/JokerWebFont/blob/master/webworker/images/weixin8.png?raw=true)
+![image](https://github.com/ChenChenJoke/JokerWebFont/blob/master/webworker/images/weixin9.png?raw=true)
 
 各个浏览器对于webworker的支持
 
