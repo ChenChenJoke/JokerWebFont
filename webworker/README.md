@@ -104,7 +104,7 @@ ps:斐波那契数列如果放入主线程做这件事保证UI卡的死死的，
 
 ![image](https://github.com/ChenChenJoke/JokerWebFont/blob/master/webworker/images/weixin8.png?raw=true)
 
-操作系统
+操作系统：
 
 ![image](https://github.com/ChenChenJoke/JokerWebFont/blob/master/webworker/images/weixin9.png?raw=true)
 
