@@ -1,6 +1,6 @@
 
 function createXHR() {
-	return new XMLHttpRequest();
+    return new XMLHttpRequest();
 }
 
 function ajax(obj) {
@@ -52,20 +52,23 @@ function params(data) {
     return arr.join('&');
 }
 
+for(var i = 0 ; i < 10000000 ; i++) {
+    if(i%50000 == 0) {
+        ajax({
+            method : 'get',
+            url : '/WebWorker/webworker',
+            data : {
+                name : "11",
+                pwd:"22"
+            },
+            success : function (message) {
+                console.log("请求成功了");
+            },
+            async : true
+        });
+    }
+}
 
-
-ajax({
-    method : 'get',
-    url : '/WebWorker/webworker.html',
-    data : {
-        name : "11",
-        pwd:"22"
-    },
-    success : function (message) {
-        console.log("请求成功了");
-    },
-    async : true
-});
 
 
 
