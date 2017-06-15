@@ -108,9 +108,15 @@ ps:斐波那契数列如果放入主线程做这件事保证UI卡的死死的，
 
 ![image](https://github.com/ChenChenJoke/JokerWebFont/blob/master/webworker/images/weixin9.png?raw=true)
 
+
+https协议域名下发起异步请求也没有问题
+
+![image](https://github.com/ChenChenJoke/JokerWebFont/blob/master/webworker/images/weixin10.png?raw=true)
+
 各个浏览器对于webworker的支持
 
 ![image](https://github.com/ChenChenJoke/JokerWebFont/blob/master/webworker/images/weixin6.png?raw=true)
+
 
 > 测试结果：webworker在微信ios版里表现优异，没有出现异常问题。在微信Android版中表现良好（只出现过一次很长时间才执行webworker的情况，初步定位为Android的配置较低计算能力较差）
 
