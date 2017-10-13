@@ -21,6 +21,8 @@ requestTime = timing.responseEnd - timing.requestStart; // request请求耗时
 initDomTreeTime = timing.domInteractive - timing.responseEnd; // 请求完毕至DOM加载:
 domReadyTime = timing.domComplete - timing.domInteractive; // 解释dom树耗时:
 loadTime = timing.loadEventEnd - timing.navigationStart // 从开始至load总耗时:
+whitescreentime = timing.responseStart - timing.fetchStart // 白屏时间
+onescreentime = timing.domComplete - timing.fetchStart // 首屏时间
 
 ```
 
